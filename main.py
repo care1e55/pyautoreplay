@@ -1,14 +1,16 @@
 import json
 import subprocess
+import sys
 import time
 from enum import Enum
 from pathlib import Path
 from typing import Iterable, Dict, Any
-import AppKit
 import pyautogui
+from tqdm import tqdm
+from loguru import logger
 
 
-class Action(Enum):
+class Action(str, Enum):
     SINGLE_PLAYER = 's'
     EXPANSION = 'e'
     OK = 'o'
@@ -23,6 +25,7 @@ class Replay:
     FRAMES_PER_SECOND = 23.84
 
     def __init__(self, replay_path: Path):
+        self.replay_path = replay_path
         self.content = self._parse(replay_path)
 
     # TODO: multiple storage support so not Path but ReplayPath of storage type
@@ -30,7 +33,7 @@ class Replay:
     def _parse(replay_path: Path) -> Dict[Any, Any]:
         """call go script"""
         p = subprocess.Popen(
-            f'resources/screp {replay_path}',
+            f'screp {replay_path}',
             shell=True,
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT
@@ -39,7 +42,11 @@ class Replay:
         result_str = ''
         for line in p.stdout.readlines():
             result_str += line.decode("utf-8")
+        print(result_str)
         return json.loads(result_str)
+
+    def remove(self):
+        self.replay_path.unlink()
 
     @property
     def duration(self) -> float:
@@ -63,6 +70,7 @@ class ReplayStorage:
         for replay_path in self.replays_storage.glob('*.rep'):
             if not replay_path.is_file():
                 continue
+            logger.info('Watching replay: {}', replay_path)
             yield Replay(replay_path)
 
 
@@ -74,9 +82,12 @@ class ReplayWatcher:
         pass
 
     def watch(self, replay: Replay):
-        print(f'Watching replay for {replay.duration}')
         self.init_replay()
-        time.sleep(replay.duration + 5)
+        for _ in tqdm(
+                range(int(round(replay.duration + 5, 0))),
+                desc=f'Watching replay for {replay.duration} seconds'
+        ):
+            time.sleep(1)
         self.exit_replay()
 
     def _do_action(self, key: str):
@@ -89,37 +100,37 @@ class ReplayWatcher:
         time.sleep(delay)
 
     def init_games_screen(self):
-        self.do_action(Action.SINGLE_PLAYER)
-        self.do_action(Action.EXPANSION)
-        self.do_action(Action.OK)
+        self._do_action(Action.SINGLE_PLAYER)
+        self._do_action(Action.EXPANSION)
+        self._do_action(Action.OK)
 
     def init_replay(self):
-        self.do_action(Action.REPLAY)
-        # for _ in range(5):
-        #     self.do_action(Action.DOWN)
-        # self.do_action(Action.OK)
-        self.do_action(Action.DOWN)
-        self.do_action(Action.OK)
-        self.do_action(Action.SPEEDUP)
-        # self.do_action(Action.SPEEDUP)
-        self.do_action(Action.SWITCH_PLAYER)
-        self.do_action(Action.SWITCH_PLAYER)
+        time.sleep(3)
+        self._do_action(Action.REPLAY)
+        self._do_action(Action.DOWN)
+        self._do_action(Action.DOWN)
+        self._do_action(Action.OK)
+        self._do_action(Action.SPEEDUP)
+        self._do_action(Action.SPEEDUP)
+        self._do_action(Action.SWITCH_PLAYER)
+        self._do_action(Action.SWITCH_PLAYER)
 
     def exit_replay(self):
-        self.do_action(Action.EXIT)
-        self.do_action(Action.OK)
-
-    def clean_watching_dir(self):
-        pass
+        self._do_action(Action.EXIT)
+        time.sleep(3)
+        self._do_action(Action.OK)
 
 
 if __name__ == '__main__':
-    replays_storage_path = Path('resources')
-
+    storage_path = Path(sys.argv[1])
+    logger.info('Starting replays from {}', storage_path)
+    replays_storage_path = Path(storage_path)
     rs = ReplayStorage(replays_storage_path)
     rw = ReplayWatcher()
 
+    time.sleep(5)
     rw.init_games_screen()
 
     for replay in rs.replays():
         rw.watch(replay)
+        replay.remove()
