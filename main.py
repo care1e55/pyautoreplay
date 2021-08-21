@@ -31,7 +31,7 @@ class Replay:
     def _parse(replay_path: Path) -> Dict[Any, Any]:
         """call go script"""
         p = subprocess.Popen(
-            f'resources/screp {replay_path}',
+            f'screp {replay_path}',
             shell=True,
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT
@@ -40,6 +40,7 @@ class Replay:
         result_str = ''
         for line in p.stdout.readlines():
             result_str += line.decode("utf-8")
+        print(result_str)
         return json.loads(result_str)
 
     @property
@@ -64,7 +65,7 @@ class ReplayStorage:
         for replay_path in self.replays_storage.glob('*.rep'):
             if not replay_path.is_file():
                 continue
-            logger.log(f'Watching replay: {replay_path}')
+            logger.info('Watching replay: {}', replay_path)
             yield Replay(replay_path)
 
 
@@ -101,6 +102,7 @@ class ReplayWatcher:
         #     self._do_action(Action.DOWN)
         # self._do_action(Action.OK)
         self._do_action(Action.DOWN)
+        self._do_action(Action.DOWN)
         self._do_action(Action.OK)
         self._do_action(Action.SPEEDUP)
         # self._do_action(Action.SPEEDUP)
@@ -117,11 +119,12 @@ class ReplayWatcher:
 
 if __name__ == '__main__':
     storage_path = Path(sys.argv[1])
-    logger.log(f'Starting replays from {storage_path}')
+    logger.info('Starting replays from {}', storage_path)
     replays_storage_path = Path(storage_path)
     rs = ReplayStorage(replays_storage_path)
     rw = ReplayWatcher()
 
+    time.sleep(5)
     rw.init_games_screen()
 
     for replay in rs.replays():
