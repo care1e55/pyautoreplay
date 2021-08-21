@@ -6,6 +6,7 @@ from enum import Enum
 from pathlib import Path
 from typing import Iterable, Dict, Any
 import pyautogui
+from tqdm import tqdm
 from loguru import logger
 
 
@@ -77,9 +78,12 @@ class ReplayWatcher:
         pass
 
     def watch(self, replay: Replay):
-        print(f'Watching replay for {replay.duration}')
         self.init_replay()
-        time.sleep(replay.duration + 5)
+        for _ in tqdm(
+                range(int(round(replay.duration + 5, 0))),
+                desc=f'Watching replay for {replay.duration} seconds'
+        ):
+            time.sleep(1)
         self.exit_replay()
 
     def _do_action(self, key: str):
@@ -98,14 +102,11 @@ class ReplayWatcher:
 
     def init_replay(self):
         self._do_action(Action.REPLAY)
-        # for _ in range(5):
-        #     self._do_action(Action.DOWN)
-        # self._do_action(Action.OK)
         self._do_action(Action.DOWN)
         self._do_action(Action.DOWN)
         self._do_action(Action.OK)
         self._do_action(Action.SPEEDUP)
-        # self._do_action(Action.SPEEDUP)
+        self._do_action(Action.SPEEDUP)
         self._do_action(Action.SWITCH_PLAYER)
         self._do_action(Action.SWITCH_PLAYER)
 
