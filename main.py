@@ -25,7 +25,7 @@ class Replay:
     FRAMES_PER_SECOND = 23.84
 
     def __init__(self, replay_path: Path):
-        self.replay_path = self._parse(replay_path)
+        self.replay_path = replay_path
         self.content = self._parse(replay_path)
 
     # TODO: multiple storage support so not Path but ReplayPath of storage type
