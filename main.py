@@ -1,14 +1,15 @@
 import json
 import subprocess
+import sys
 import time
 from enum import Enum
 from pathlib import Path
 from typing import Iterable, Dict, Any
-import AppKit
 import pyautogui
+from loguru import logger
 
 
-class Action(Enum):
+class Action(str, Enum):
     SINGLE_PLAYER = 's'
     EXPANSION = 'e'
     OK = 'o'
@@ -63,6 +64,7 @@ class ReplayStorage:
         for replay_path in self.replays_storage.glob('*.rep'):
             if not replay_path.is_file():
                 continue
+            logger.log(f'Watching replay: {replay_path}')
             yield Replay(replay_path)
 
 
@@ -89,33 +91,34 @@ class ReplayWatcher:
         time.sleep(delay)
 
     def init_games_screen(self):
-        self.do_action(Action.SINGLE_PLAYER)
-        self.do_action(Action.EXPANSION)
-        self.do_action(Action.OK)
+        self._do_action(Action.SINGLE_PLAYER)
+        self._do_action(Action.EXPANSION)
+        self._do_action(Action.OK)
 
     def init_replay(self):
-        self.do_action(Action.REPLAY)
+        self._do_action(Action.REPLAY)
         # for _ in range(5):
-        #     self.do_action(Action.DOWN)
-        # self.do_action(Action.OK)
-        self.do_action(Action.DOWN)
-        self.do_action(Action.OK)
-        self.do_action(Action.SPEEDUP)
-        # self.do_action(Action.SPEEDUP)
-        self.do_action(Action.SWITCH_PLAYER)
-        self.do_action(Action.SWITCH_PLAYER)
+        #     self._do_action(Action.DOWN)
+        # self._do_action(Action.OK)
+        self._do_action(Action.DOWN)
+        self._do_action(Action.OK)
+        self._do_action(Action.SPEEDUP)
+        # self._do_action(Action.SPEEDUP)
+        self._do_action(Action.SWITCH_PLAYER)
+        self._do_action(Action.SWITCH_PLAYER)
 
     def exit_replay(self):
-        self.do_action(Action.EXIT)
-        self.do_action(Action.OK)
+        self._do_action(Action.EXIT)
+        self._do_action(Action.OK)
 
     def clean_watching_dir(self):
         pass
 
 
 if __name__ == '__main__':
-    replays_storage_path = Path('resources')
-
+    storage_path = Path(sys.argv[1])
+    logger.log(f'Starting replays from {storage_path}')
+    replays_storage_path = Path(storage_path)
     rs = ReplayStorage(replays_storage_path)
     rw = ReplayWatcher()
 
