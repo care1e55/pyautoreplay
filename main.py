@@ -8,6 +8,7 @@ from typing import Iterable, Dict, Any
 import pyautogui
 from tqdm import tqdm
 from loguru import logger
+import shutil
 
 
 class Action(str, Enum):
@@ -48,6 +49,9 @@ class Replay:
     def remove(self):
         self.replay_path.unlink()
 
+    def copy(self, to_path: Path):
+        shutil.copy(self.replay_path, to_path)
+
     @property
     def duration(self) -> float:
         return self.content['Header']['Frames'] / self.FRAMES_PER_SECOND
@@ -75,13 +79,13 @@ class ReplayStorage:
 
 
 class ReplayWatcher:
-    BASE_GAME_PATH = Path('starcraft')
-    WATCHING_DIR = Path('Watching')
 
-    def __init__(self):
-        pass
+    def __init__(self, base_game_path: Path):
+        self.watching_path = base_game_path / 'maps' / 'watching'
 
     def watch(self, replay: Replay):
+        watching_replay_path = self.watching_path / replay.replay_path.name
+        replay.copy(watching_replay_path)
         self.init_replay()
         for _ in tqdm(
                 range(int(round(replay.duration + 5, 0))),
@@ -89,6 +93,7 @@ class ReplayWatcher:
         ):
             time.sleep(1)
         self.exit_replay()
+        watching_replay_path.unlink()
 
     def _do_action(self, key: str):
         self._press_key(key)
@@ -100,6 +105,7 @@ class ReplayWatcher:
         time.sleep(delay)
 
     def init_games_screen(self):
+        time.sleep(5)
         self._do_action(Action.SINGLE_PLAYER)
         self._do_action(Action.EXPANSION)
         self._do_action(Action.OK)
@@ -123,14 +129,13 @@ class ReplayWatcher:
 
 if __name__ == '__main__':
     storage_path = Path(sys.argv[1])
+    base_game_path = Path(sys.argv[2])
     logger.info('Starting replays from {}', storage_path)
     replays_storage_path = Path(storage_path)
     rs = ReplayStorage(replays_storage_path)
-    rw = ReplayWatcher()
+    rw = ReplayWatcher(base_game_path)
 
-    time.sleep(5)
     rw.init_games_screen()
 
     for replay in rs.replays():
         rw.watch(replay)
-        replay.remove()
