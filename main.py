@@ -112,6 +112,7 @@ class ReplayWatcher:
 
     def exit_replay(self):
         self._do_action(Action.EXIT)
+        time.sleep(3)
         self._do_action(Action.OK)
 
     def clean_watching_dir(self):
