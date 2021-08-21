@@ -25,6 +25,7 @@ class Replay:
     FRAMES_PER_SECOND = 23.84
 
     def __init__(self, replay_path: Path):
+        self.replay_path = self._parse(replay_path)
         self.content = self._parse(replay_path)
 
     # TODO: multiple storage support so not Path but ReplayPath of storage type
@@ -43,6 +44,9 @@ class Replay:
             result_str += line.decode("utf-8")
         print(result_str)
         return json.loads(result_str)
+
+    def remove(self):
+        self.replay_path.unlink()
 
     @property
     def duration(self) -> float:
@@ -115,9 +119,6 @@ class ReplayWatcher:
         time.sleep(3)
         self._do_action(Action.OK)
 
-    def clean_watching_dir(self):
-        pass
-
 
 if __name__ == '__main__':
     storage_path = Path(sys.argv[1])
@@ -131,3 +132,4 @@ if __name__ == '__main__':
 
     for replay in rs.replays():
         rw.watch(replay)
+        replay.remove()
