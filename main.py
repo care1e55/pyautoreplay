@@ -105,6 +105,7 @@ class ReplayWatcher:
         self._do_action(Action.OK)
 
     def init_replay(self):
+        time.sleep(3)
         self._do_action(Action.REPLAY)
         self._do_action(Action.DOWN)
         self._do_action(Action.DOWN)
