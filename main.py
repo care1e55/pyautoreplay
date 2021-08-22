@@ -9,6 +9,34 @@ import pyautogui
 from tqdm import tqdm
 from loguru import logger
 import shutil
+import win32gui
+import re
+
+
+class WindowMgr:
+    """Encapsulates some calls to the winapi for window management"""
+
+    def __init__ (self):
+        """Constructor"""
+        self._handle = None
+
+    def find_window(self, class_name, window_name=None):
+        """find a window by its class_name"""
+        self._handle = win32gui.FindWindow(class_name, window_name)
+
+    def _window_enum_callback(self, hwnd, wildcard):
+        """Pass to win32gui.EnumWindows() to check all the opened windows"""
+        if re.match(wildcard, str(win32gui.GetWindowText(hwnd))) is not None:
+            self._handle = hwnd
+
+    def find_window_wildcard(self, wildcard):
+        """find a window whose title matches the wildcard regex"""
+        self._handle = None
+        win32gui.EnumWindows(self._window_enum_callback, wildcard)
+
+    def set_foreground(self):
+        """put the window in the foreground"""
+        win32gui.SetForegroundWindow(self._handle)
 
 
 class Action(str, Enum):
@@ -43,7 +71,6 @@ class Replay:
         result_str = ''
         for line in p.stdout.readlines():
             result_str += line.decode("utf-8")
-        print(result_str)
         return json.loads(result_str)
 
     def remove(self):
@@ -81,10 +108,12 @@ class ReplayStorage:
 class ReplayWatcher:
 
     def __init__(self, base_game_path: Path):
-        self.watching_path = base_game_path / 'maps' / 'watching'
+        self._window_mgr = WindowMgr()
+        self.watching_path = base_game_path / 'maps' / 'replays' / 'watching'
 
     def watch(self, replay: Replay):
         watching_replay_path = self.watching_path / replay.replay_path.name
+        logger.info(f"Copying {replay.replay_path} to {watching_replay_path}")
         replay.copy(watching_replay_path)
         self.init_replay()
         for _ in tqdm(
@@ -96,6 +125,8 @@ class ReplayWatcher:
         watching_replay_path.unlink()
 
     def _do_action(self, key: str):
+        self._window_mgr.find_window_wildcard("Brood War")
+        self._window_mgr.set_foreground()
         self._press_key(key)
 
     @staticmethod
@@ -114,6 +145,8 @@ class ReplayWatcher:
         time.sleep(3)
         self._do_action(Action.REPLAY)
         self._do_action(Action.DOWN)
+        self._do_action(Action.DOWN)
+        self._do_action(Action.OK)
         self._do_action(Action.DOWN)
         self._do_action(Action.OK)
         self._do_action(Action.SPEEDUP)
