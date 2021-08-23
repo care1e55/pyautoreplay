@@ -11,6 +11,7 @@ from loguru import logger
 import shutil
 import win32gui
 import re
+from random import shuffle
 
 
 class WindowMgr:
@@ -98,11 +99,16 @@ class ReplayStorage:
         self.replays_storage = replays_storage
 
     def replays(self) -> Iterable:
-        for replay_path in self.replays_storage.glob('*.rep'):
+        replays = list(self.replays_storage.glob('*.rep'))
+        shuffle(replays)
+        for replay_path in replays:
             if not replay_path.is_file():
                 continue
             logger.info('Watching replay: {}', replay_path)
-            yield Replay(replay_path)
+            try:
+                yield Replay(replay_path)
+            except:
+                continue
 
 
 class ReplayWatcher:
@@ -171,4 +177,5 @@ if __name__ == '__main__':
     rw.init_games_screen()
 
     for replay in rs.replays():
-        rw.watch(replay)
+        if replay:
+            rw.watch(replay)
