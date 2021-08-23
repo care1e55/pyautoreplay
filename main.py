@@ -120,15 +120,20 @@ class ReplayWatcher:
     def watch(self, replay: Replay):
         watching_replay_path = self.watching_path / replay.replay_path.name
         logger.info(f"Copying {replay.replay_path} to {watching_replay_path}")
+        self._clean_watching_dir()
         replay.copy(watching_replay_path)
         self.init_replay()
         for _ in tqdm(
-                range(int(round(replay.duration + 5, 0))),
+                range(int(round(replay.duration, 0))),
                 desc=f'Watching replay for {replay.duration} seconds'
         ):
             time.sleep(1)
         self.exit_replay()
         watching_replay_path.unlink()
+
+    def _clean_watching_dir(self):
+        for replay in self.watching_path.glob('*.rep'):
+            replay.unlink()
 
     def _do_action(self, key: str):
         self._window_mgr.find_window_wildcard("Brood War")
