@@ -2,8 +2,8 @@ import sys
 from pathlib import Path
 from loguru import logger
 
-from replay import ReplayStorage
-from watcher import ReplayWatcher
+from pyautoreplay.storage.storage import ReplayStorage
+from pyautoreplay.watcher.legacy import ReplayWatcher
 
 if __name__ == '__main__':
     storage_path = Path(sys.argv[1])

@@ -1,10 +1,9 @@
 import json
 import subprocess
 from pathlib import Path
-from typing import Iterable, Dict, Any
+from typing import Dict, Any
 from loguru import logger
 import shutil
-from random import shuffle
 from functools import cached_property
 
 
@@ -40,8 +39,9 @@ class Replay:
         shutil.copy(self.replay_path, to_path)
 
     @property
-    def duration(self) -> float:
-        return self.content['Header']['Frames'] / self.FRAMES_PER_SECOND
+    def duration(self) -> int:
+        duration = self.content['Header']['Frames'] / self.FRAMES_PER_SECOND
+        return int(round(duration, 0)
 
     @property
     def winner(self) -> str:
@@ -50,21 +50,3 @@ class Replay:
     @property
     def loser(self) -> str:
         raise NotImplementedError()
-
-
-class ReplayStorage:
-    # TODO: multiple storage support so not Path but ReplayPath of storage type
-    def __init__(self, replays_storage: Path):
-        self.replays_storage = replays_storage
-
-    def replays(self) -> Iterable:
-        replays = list(self.replays_storage.glob('*.rep'))
-        shuffle(replays)
-        for replay_path in replays:
-            if not replay_path.is_file():
-                continue
-            logger.info('Watching replay: {}', replay_path)
-            try:
-                yield Replay(replay_path)
-            except:
-                continue
