@@ -5,8 +5,8 @@ import pyautogui
 from tqdm import tqdm
 from loguru import logger
 
+from pyautoreplay.window_manager.windows import WindowsWindowManager
 from replay import Replay
-from window_manager import WindowMgr
 
 
 class Action(str, Enum):
@@ -23,7 +23,7 @@ class Action(str, Enum):
 class ReplayWatcher:
 
     def __init__(self, base_game_path: Path):
-        self._window_mgr = WindowMgr()
+        self._window_mgr = WindowsWindowManager()
         self.watching_path = base_game_path / 'maps' / 'replays' / 'watching'
 
     def watch(self, replay: Replay):

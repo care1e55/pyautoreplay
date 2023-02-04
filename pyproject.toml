@@ -5,10 +5,15 @@ description = ""
 authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.9"
 
 [tool.poetry.dev-dependencies]
+win32gui = { version = "*", optional = true }
+loguru = "*"
+jupyter = "*"
+pyautogui = "*"
+tqdm = "*"
 
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.extras]
+win32gui = ["win32gui"]

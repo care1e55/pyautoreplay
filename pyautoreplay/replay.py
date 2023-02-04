@@ -5,6 +5,7 @@ from typing import Iterable, Dict, Any
 from loguru import logger
 import shutil
 from random import shuffle
+from functools import cached_property
 
 
 class Replay:
@@ -12,14 +13,16 @@ class Replay:
 
     def __init__(self, replay_path: Path):
         self.replay_path = replay_path
-        self.content = self._parse(replay_path)
+        self._replay_path_str = f"\"{str(replay_path)}\""
 
     # TODO: multiple storage support so not Path but ReplayPath of storage type
-    @staticmethod
-    def _parse(replay_path: Path) -> Dict[Any, Any]:
-        """call go script"""
+    @cached_property
+    def content(self) -> Dict[Any, Any]:
+        call_str = f'screp {self._replay_path_str}'  # call go script
+        # logger.info("Call script: {}", call_str) \
+        print("Call script: \n{}".format(call_str))
         p = subprocess.Popen(
-            f'screp {replay_path}',
+            call_str,
             shell=True,
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT
@@ -42,11 +45,11 @@ class Replay:
 
     @property
     def winner(self) -> str:
-        pass
+        raise NotImplementedError()
 
     @property
     def loser(self) -> str:
-        pass
+        raise NotImplementedError()
 
 
 class ReplayStorage:
