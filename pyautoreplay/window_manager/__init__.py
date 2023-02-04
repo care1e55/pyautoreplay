@@ -4,11 +4,6 @@ from abc import abstractmethod
 class WindowManager:
 
     @abstractmethod
-    def find_window(self, class_name, window_name: str):
+    def find_window(self, window_name: str, *args, **kwargs):
         """find a window by"""
-        pass
-
-    @abstractmethod
-    def set_foreground(self):
-        """put the window in the foreground"""
         pass

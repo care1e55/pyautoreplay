@@ -4,9 +4,8 @@ from pathlib import Path
 import pyautogui
 from tqdm import tqdm
 from loguru import logger
-
-from pyautoreplay.window_manager.windows import WindowsWindowManager
 from replay import Replay
+from window_manager.debian import UbuntuWindowManager
 
 
 class Action(str, Enum):
@@ -20,10 +19,20 @@ class Action(str, Enum):
     EXIT = 'x'
 
 
+class System(str, Enum):
+    UBUNTU = 'ubuntu'
+    WINDOWS = 'windows'
+
+
 class ReplayWatcher:
 
-    def __init__(self, base_game_path: Path):
-        self._window_mgr = WindowsWindowManager()
+    def __init__(self, base_game_path: Path, system: System = System.UBUNTU):
+        if system == System.WINDOWS:
+            self._window_mgr = WindowsWindowManager()
+        elif system == System.UBUNTU:
+            self._window_mgr = UbuntuWindowManager()
+        else:
+            raise ValueError('No such window manager')
         self.watching_path = base_game_path / 'maps' / 'replays' / 'watching'
 
     def watch(self, replay: Replay):
@@ -46,7 +55,6 @@ class ReplayWatcher:
 
     def _do_action(self, key: str):
         self._window_mgr.find_window_wildcard("Brood War")
-        self._window_mgr.set_foreground()
         self._press_key(key)
 
     @staticmethod

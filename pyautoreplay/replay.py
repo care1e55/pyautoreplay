@@ -20,7 +20,7 @@ class Replay:
     def content(self) -> Dict[Any, Any]:
         call_str = f'screp {self._replay_path_str}'  # call go script
         # logger.info("Call script: {}", call_str) \
-        print("Call script: \n{}".format(call_str))
+        # print("Call script: \n{}".format(call_str))
         p = subprocess.Popen(
             call_str,
             shell=True,
