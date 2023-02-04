@@ -13,6 +13,9 @@ loguru = "*"
 jupyter = "*"
 pyautogui = "*"
 tqdm = "*"
+PyGObject = "*"
+pycairo = "*"
+pydantic = "*"
 
 
 [tool.poetry.extras]

@@ -1,3 +1,4 @@
+from enum import Enum
 from pathlib import Path
 from random import shuffle
 from typing import Iterable
@@ -10,13 +11,17 @@ from pyautoreplay.replay import Replay
 class ReplayStorage:
     # TODO: multiple storage support so not Path but ReplayPath of storage type
 
+    ALL = 'ALL'
+    WATCHING = 'watching'
+
     def __init__(self, replays_storage: Path):
+        self.extension = '.rep'
         self.replays_storage = replays_storage
-        self.replays_path = replays_storage / 'ALL'
-        self.watching_path = replays_storage / 'watching'
+        self.replays_path = replays_storage / self.ALL
+        self.watching_path = replays_storage / self.WATCHING
 
     def replays(self) -> Iterable:
-        replays = list(self.replays_storage.glob('*.rep'))
+        replays = list(self.replays_storage.glob(f'*{self.extension}'))
         shuffle(replays)
         for replay_path in replays:
             if not replay_path.is_file():

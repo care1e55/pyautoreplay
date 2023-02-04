@@ -1,22 +1,55 @@
 import time
+from pyautoreplay.window_manager import WindowManager
 
 import gi
-
-from pyautoreplay.window_manager import WindowManager
 
 gi.require_version('Wnck', '3.0')
 gi.require_version("Gtk", "3.0")
 from gi.repository import Wnck, Gtk
 
 
+class Window:
+    def __init__(self, window):
+        self.window = window
+
+    def focus(self):
+        self.window.activate(int(time.time()))
+
+    @property
+    def name(self) -> str:
+        return self.window.get_name()
+
+    def __repr__(self):
+        return self.name
+
+    def __str__(self):
+        return self.name
+
+
 class UbuntuWindowManager(WindowManager):
 
-    def find_window(self, window_name: str, **kwargs):
-        Gtk.main_iteration()
-        Gtk.main_iteration_do(False)
+    def __init__(self):
+        pass
+
+    @property
+    def focused_window(self):
+        self.update()
         screen = Wnck.Screen.get_default()
         screen.force_update()
-        windows = screen.get_windows()
-        for w in windows:
-            if w.get_name() == window_name:
-                w.activate(int(time.time()))
+        return screen.get_active_window()
+
+    @property
+    def windows(self):
+        screen = Wnck.Screen.get_default()
+        screen.force_update()
+        windows = [Window(window) for window in screen.get_windows()]
+        return windows
+
+    def update():
+        Gtk.main_iteration()
+        Gtk.main_iteration_do(False)
+
+    def find_window(self, name: str, **kwargs):
+        for window in self.windows:
+            if window.name == name:
+                return window

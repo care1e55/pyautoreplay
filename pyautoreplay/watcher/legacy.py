@@ -28,14 +28,13 @@ class System(str, Enum):
 
 class ReplayWatcher:
 
-    def __init__(self, base_game_path: Path, system: System = System.UBUNTU):
+    def __init__(self, system: System = System.UBUNTU):
         if system == System.WINDOWS:
             self._window_mgr = WindowsWindowManager()
         elif system == System.UBUNTU:
             self._window_mgr = UbuntuWindowManager()
         else:
             raise ValueError('No such window manager')
-        self.watching_path = base_game_path / 'maps' / 'replays' / 'watching'
 
     def watch(self, replay: Replay):
         self.init_replay()
