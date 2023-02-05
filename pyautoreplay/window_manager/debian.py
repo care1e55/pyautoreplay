@@ -1,5 +1,8 @@
 import time
-from pyautoreplay.window_manager import WindowManager
+from abc import abstractmethod
+
+
+from pyautoreplay.window_manager import WindowManager, Window
 
 import gi
 
@@ -8,9 +11,7 @@ gi.require_version("Gtk", "3.0")
 from gi.repository import Wnck, Gtk
 
 
-class Window:
-    def __init__(self, window):
-        self.window = window
+class UbuntuWindow(Window):
 
     def focus(self):
         self.window.activate(int(time.time()))
@@ -18,12 +19,6 @@ class Window:
     @property
     def name(self) -> str:
         return self.window.get_name()
-
-    def __repr__(self):
-        return self.name
-
-    def __str__(self):
-        return self.name
 
 
 class UbuntuWindowManager(WindowManager):
