@@ -4,7 +4,8 @@ import pyautogui
 from tqdm import tqdm
 from loguru import logger
 
-from pyautoreplay.replay.replay import Replay
+from pyautoreplay.replay.screp.screp import Replay
+from pyautoreplay.storage.storage import ReplayStorage
 from pyautoreplay.window_manager.debian import UbuntuWindowManager
 from pyautoreplay.window_manager.windows import WindowsWindowManager
 
@@ -27,11 +28,14 @@ class System(str, Enum):
 
 class ReplayWatcher:
 
-    def __init__(self, system: System = System.UBUNTU):
+    WATCHING = 'Autoreplay'
+
+    def __init__(self, storage: ReplayStorage, system: System = System.UBUNTU):
+        self.watching_path = storage.replays_storage_path / self.WATCHING
         if system == System.WINDOWS:
-            self._window_mgr = WindowsWindowManager()
+            self.window_manager = WindowsWindowManager()
         elif system == System.UBUNTU:
-            self._window_mgr = UbuntuWindowManager()
+            self.window_manager = UbuntuWindowManager()
         else:
             raise ValueError('No such window manager')
 
@@ -42,7 +46,8 @@ class ReplayWatcher:
         self.exit_replay()
 
     def _do_action(self, key: str):
-        self._window_mgr.find_window("Brood War")
+        window = self.window_manager.find_window("Brood War")
+        self.window_manager.focus(window)
         self._press_key(key)
 
     @staticmethod
@@ -74,3 +79,10 @@ class ReplayWatcher:
         self._do_action(Action.EXIT)
         time.sleep(3)
         self._do_action(Action.OK)
+
+    def _move_to_watcing_dir(self, replay: Replay):
+        replay.copy(self.watching_path / replay.path.name)
+
+    def _clean_watching_dir(self):
+        for replay in self.watching_path.glob('*.rep'):
+            replay.unlink()

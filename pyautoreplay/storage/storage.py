@@ -5,23 +5,20 @@ from typing import Iterable
 
 from loguru import logger
 
-from pyautoreplay.replay.replay import Replay
+from pyautoreplay.replay.screp.screp import Replay
 
 
 class ReplayStorage:
     # TODO: multiple storage support so not Path but ReplayPath of storage type
 
     ALL = 'ALL'
-    WATCHING = 'watching'
 
-    def __init__(self, replays_storage: Path):
+    def __init__(self, replays_storage_path: Path):
         self.extension = '.rep'
-        self.replays_storage = replays_storage
-        self.replays_path = replays_storage / self.ALL
-        self.watching_path = replays_storage / self.WATCHING
+        self.replays_storage_path = replays_storage_path
 
     def replays(self) -> Iterable:
-        replays = list(self.replays_storage.glob(f'*{self.extension}'))
+        replays = list(self.replays_storage_path.glob(f'*{self.extension}'))
         shuffle(replays)
         for replay_path in replays:
             if not replay_path.is_file():
@@ -31,10 +28,3 @@ class ReplayStorage:
                 yield Replay(replay_path)
             except:
                 continue
-
-    def _move_to_watcing_dir(self, replay: Replay):
-        replay.copy(self.watching_path / replay.path.name)
-
-    def _clean_watching_dir(self):
-        for replay in self.watching_path.glob('*.rep'):
-            replay.unlink()

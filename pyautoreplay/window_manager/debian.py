@@ -40,6 +40,9 @@ class UbuntuWindowManager(WindowManager):
         windows = [Window(window) for window in screen.get_windows()]
         return windows
 
+    def focus(self, window):
+        window.window.activate(time.time())
+
     def update():
         Gtk.main_iteration()
         Gtk.main_iteration_do(False)

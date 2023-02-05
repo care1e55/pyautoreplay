@@ -1,3 +1,4 @@
+import time
 from abc import abstractmethod
 
 
@@ -6,14 +7,10 @@ class Window:
     def __init__(self, window):
         self.window = window
 
-    @abstractmethod
-    def focus(self):
-        pass
-
     @property
-    @abstractmethod
+    # @abstractmethod
     def name(self) -> str:
-        pass
+        return self.window.get_name()
 
     def __repr__(self):
         return self.name
@@ -23,6 +20,10 @@ class Window:
 
 
 class WindowManager:
+
+    # @abstractmethod
+    def focus(self, window):
+        pass
 
     @abstractmethod
     def find_window(self, window_name: str, *args, **kwargs):
