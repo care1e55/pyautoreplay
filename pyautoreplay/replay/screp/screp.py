@@ -2,10 +2,9 @@ import json
 import subprocess
 from pathlib import Path
 from typing import Dict, Any
-from loguru import logger
 import shutil
 
-from pyautoreplay.replay.model import ReplayModel
+from pyautoreplay.replay.screp.model import ReplayModel
 
 
 class Replay:
