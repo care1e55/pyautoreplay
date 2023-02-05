@@ -4,7 +4,8 @@ from pathlib import Path
 from typing import Dict, Any
 from loguru import logger
 import shutil
-from functools import cached_property
+
+from pyautoreplay.replay.model import ReplayModel
 
 
 class Replay:
@@ -12,12 +13,13 @@ class Replay:
 
     def __init__(self, replay_path: Path):
         self.path = replay_path
-        self._path_str = f"\"{str(replay_path)}\""
+        self.json = self._parse(self.path)
+        self.replay = ReplayModel.parse_obj(self.json)
 
     # TODO: multiple storage support so not Path but ReplayPath of storage type
-    @cached_property
-    def content(self) -> Dict[Any, Any]:
-        call_str = f'screp {self._path_str}'  # call go script
+    def _parse(self, path) -> Dict[Any, Any]:
+        _path_str = f"\"{str(path)}\""
+        call_str = f'screp {_path_str}'  # call go script
         # logger.info("Call script: {}", call_str) \
         # print("Call script: \n{}".format(call_str))
         p = subprocess.Popen(
@@ -40,7 +42,7 @@ class Replay:
 
     @property
     def duration(self) -> int:
-        duration = self.content['Header']['Frames'] / self.FRAMES_PER_SECOND
+        duration = self.replay.Header.Frames / self.FRAMES_PER_SECOND
         return int(round(duration, 0))
 
     @property

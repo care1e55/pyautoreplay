@@ -1,11 +1,10 @@
 import time
 from enum import Enum
-from pathlib import Path
 import pyautogui
 from tqdm import tqdm
 from loguru import logger
 
-from pyautoreplay.replay import Replay
+from pyautoreplay.replay.replay import Replay
 from pyautoreplay.window_manager.debian import UbuntuWindowManager
 from pyautoreplay.window_manager.windows import WindowsWindowManager
 

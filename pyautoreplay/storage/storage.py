@@ -5,7 +5,7 @@ from typing import Iterable
 
 from loguru import logger
 
-from pyautoreplay.replay import Replay
+from pyautoreplay.replay.replay import Replay
 
 
 class ReplayStorage:
@@ -33,7 +33,7 @@ class ReplayStorage:
                 continue
 
     def _move_to_watcing_dir(self, replay: Replay):
-        replay.copy(self.watching_path / replay.replay_path.name)
+        replay.copy(self.watching_path / replay.path.name)
 
     def _clean_watching_dir(self):
         for replay in self.watching_path.glob('*.rep'):
