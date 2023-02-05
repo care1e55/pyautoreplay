@@ -6,7 +6,7 @@ from loguru import logger
 
 from pyautoreplay.replay.screp.screp import Replay
 from pyautoreplay.storage.storage import ReplayStorage
-from pyautoreplay.window_manager.debian import UbuntuWindowManager
+from pyautoreplay.window_manager.debian import UbuntuWmctrlWindowManager
 from pyautoreplay.window_manager.windows import WindowsWindowManager
 
 
@@ -29,13 +29,15 @@ class System(str, Enum):
 class ReplayWatcher:
 
     WATCHING = 'Autoreplay'
+    # WINDOW = '~/code/pyautoreplay/rep.json - Sublime Text (UNREGISTERED)'
+    WINDOW = 'Brood War'
 
     def __init__(self, storage: ReplayStorage, system: System = System.UBUNTU):
         self.watching_path = storage.replays_storage_path / self.WATCHING
         if system == System.WINDOWS:
             self.window_manager = WindowsWindowManager()
         elif system == System.UBUNTU:
-            self.window_manager = UbuntuWindowManager()
+            self.window_manager = UbuntuWmctrlWindowManager()
         else:
             raise ValueError('No such window manager')
 
@@ -45,9 +47,10 @@ class ReplayWatcher:
             time.sleep(1)
         self.exit_replay()
 
-    def _do_action(self, key: str):
-        window = self.window_manager.find_window("Brood War")
+    def _do_action(self, key: str, delay: float = 0.2):
+        window = self.window_manager.find_window(self.WINDOW)
         self.window_manager.focus(window)
+        time.sleep(delay)
         self._press_key(key)
 
     @staticmethod
@@ -57,7 +60,6 @@ class ReplayWatcher:
         time.sleep(delay)
 
     def init_games_screen(self):
-        time.sleep(5)
         self._do_action(Action.SINGLE_PLAYER)
         self._do_action(Action.EXPANSION)
         self._do_action(Action.OK)

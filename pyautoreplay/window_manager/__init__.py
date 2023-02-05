@@ -3,12 +3,15 @@ from abc import abstractmethod
 
 
 class Window:
+    pass
+
+
+class WnckWindow(Window):
 
     def __init__(self, window):
         self.window = window
 
     @property
-    # @abstractmethod
     def name(self) -> str:
         return self.window.get_name()
 
@@ -17,6 +20,12 @@ class Window:
 
     def __str__(self):
         return self.name
+
+
+class WmctrlWindow(Window):
+
+    def __init__(self, name: str):
+        self.name = name
 
 
 class WindowManager:
