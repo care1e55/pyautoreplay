@@ -29,11 +29,11 @@ class System(str, Enum):
 class ReplayWatcher:
 
     WATCHING = 'Autoreplay'
-    # WINDOW = '~/code/pyautoreplay/rep.json - Sublime Text (UNREGISTERED)'
     WINDOW = 'Brood War'
 
     def __init__(self, storage: ReplayStorage, system: System = System.UBUNTU):
         self.watching_path = storage.replays_storage_path / self.WATCHING
+        self.current_replay = None
         if system == System.WINDOWS:
             self.window_manager = WindowsWindowManager()
         elif system == System.UBUNTU:
@@ -43,7 +43,7 @@ class ReplayWatcher:
 
     def watch(self, replay: Replay):
         self.init_replay()
-        for _ in tqdm(range(replay.duration), desc=f'Watching replay for {replay.duration} seconds'):
+        for _ in tqdm(range(replay.duration), desc=f'Watching replay {replay.name} for {replay.duration} seconds'):
             time.sleep(1)
         self.exit_replay()
 
@@ -67,8 +67,6 @@ class ReplayWatcher:
     def init_replay(self):
         time.sleep(3)
         self._do_action(Action.REPLAY)
-        self._do_action(Action.DOWN)
-        self._do_action(Action.DOWN)
         self._do_action(Action.OK)
         self._do_action(Action.DOWN)
         self._do_action(Action.OK)

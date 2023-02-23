@@ -1,4 +1,5 @@
 import re
+import win32gui
 
 from pyautoreplay.window_manager import WindowManager
 
@@ -8,7 +9,6 @@ class WindowsWindowManager(WindowManager):
 
     def __init__(self):
         """Constructor"""
-        import win32gui
         self._handle = None
 
     def find_window(self, window_name, class_name):
