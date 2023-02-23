@@ -1,5 +1,5 @@
-import win32gui
 import re
+import win32gui
 
 from pyautoreplay.window_manager import WindowManager
 
@@ -11,9 +11,11 @@ class WindowsWindowManager(WindowManager):
         """Constructor"""
         self._handle = None
 
-    def find_window(self, class_name, window_name=None):
+    def find_window(self, window_name, class_name):
         """find a window by its class_name"""
-        self._handle = win32gui.FindWindow(class_name, window_name)
+        if window_name:
+            self._handle = win32gui.FindWindow(class_name, window_name)
+            self.set_foreground()
 
     def _window_enum_callback(self, hwnd, wildcard):
         """Pass to win32gui.EnumWindows() to check all the opened windows"""
@@ -24,6 +26,7 @@ class WindowsWindowManager(WindowManager):
         """find a window whose title matches the wildcard regex"""
         self._handle = None
         win32gui.EnumWindows(self._window_enum_callback, wildcard)
+        self.set_foreground()
 
     def set_foreground(self):
         """put the window in the foreground"""

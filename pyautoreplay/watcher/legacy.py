@@ -1,12 +1,13 @@
 import time
 from enum import Enum
-from pathlib import Path
 import pyautogui
 from tqdm import tqdm
 from loguru import logger
 
+from pyautoreplay.replay.screp.screp import Replay
+from pyautoreplay.storage.storage import ReplayStorage
+from pyautoreplay.window_manager.debian import UbuntuWmctrlWindowManager
 from pyautoreplay.window_manager.windows import WindowsWindowManager
-from replay import Replay
 
 
 class Action(str, Enum):
@@ -20,33 +21,36 @@ class Action(str, Enum):
     EXIT = 'x'
 
 
+class System(str, Enum):
+    UBUNTU = 'ubuntu'
+    WINDOWS = 'windows'
+
+
 class ReplayWatcher:
 
-    def __init__(self, base_game_path: Path):
-        self._window_mgr = WindowsWindowManager()
-        self.watching_path = base_game_path / 'maps' / 'replays' / 'watching'
+    WATCHING = 'Autoreplay'
+    WINDOW = 'Brood War'
+
+    def __init__(self, storage: ReplayStorage, system: System = System.UBUNTU):
+        self.watching_path = storage.replays_storage_path / self.WATCHING
+        self.current_replay = None
+        if system == System.WINDOWS:
+            self.window_manager = WindowsWindowManager()
+        elif system == System.UBUNTU:
+            self.window_manager = UbuntuWmctrlWindowManager()
+        else:
+            raise ValueError('No such window manager')
 
     def watch(self, replay: Replay):
-        watching_replay_path = self.watching_path / replay.replay_path.name
-        logger.info(f"Copying {replay.replay_path} to {watching_replay_path}")
-        self._clean_watching_dir()
-        replay.copy(watching_replay_path)
         self.init_replay()
-        for _ in tqdm(
-                range(int(round(replay.duration, 0))),
-                desc=f'Watching replay for {replay.duration} seconds'
-        ):
+        for _ in tqdm(range(replay.duration), desc=f'Watching replay {replay.name} for {replay.duration} seconds'):
             time.sleep(1)
         self.exit_replay()
-        watching_replay_path.unlink()
 
-    def _clean_watching_dir(self):
-        for replay in self.watching_path.glob('*.rep'):
-            replay.unlink()
-
-    def _do_action(self, key: str):
-        self._window_mgr.find_window_wildcard("Brood War")
-        self._window_mgr.set_foreground()
+    def _do_action(self, key: str, delay: float = 0.2):
+        window = self.window_manager.find_window(self.WINDOW)
+        self.window_manager.focus(window)
+        time.sleep(delay)
         self._press_key(key)
 
     @staticmethod
@@ -56,7 +60,6 @@ class ReplayWatcher:
         time.sleep(delay)
 
     def init_games_screen(self):
-        time.sleep(5)
         self._do_action(Action.SINGLE_PLAYER)
         self._do_action(Action.EXPANSION)
         self._do_action(Action.OK)
@@ -64,8 +67,6 @@ class ReplayWatcher:
     def init_replay(self):
         time.sleep(3)
         self._do_action(Action.REPLAY)
-        self._do_action(Action.DOWN)
-        self._do_action(Action.DOWN)
         self._do_action(Action.OK)
         self._do_action(Action.DOWN)
         self._do_action(Action.OK)
@@ -78,3 +79,10 @@ class ReplayWatcher:
         self._do_action(Action.EXIT)
         time.sleep(3)
         self._do_action(Action.OK)
+
+    def _move_to_watcing_dir(self, replay: Replay):
+        replay.copy(self.watching_path / replay.path.name)
+
+    def _clean_watching_dir(self):
+        for replay in self.watching_path.glob('*.rep'):
+            replay.unlink()
