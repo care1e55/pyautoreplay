@@ -31,11 +31,11 @@ class ReplayWatcher:
     WATCHING = r'Autoreplay'
     WINDOW = r'Brood War'
 
-    def __init__(self, storage: ReplayStorage, system: System = System.UBUNTU):
+    def __init__(self, storage: ReplayStorage, watching_path, system: System = System.UBUNTU):
         print(storage.replays_storage_path)
         print(self.WATCHING)
         # self.watching_path = Path(f'{storage.replays_storage_path}\\{self.WATCHING}')
-        self.watching_path = storage.replays_storage_path / self.WATCHING
+        self.watching_path = watching_path
         self.current_replay = None
         if system == System.WINDOWS:
             from pyautoreplay.window_manager.windows import WindowsWindowManager

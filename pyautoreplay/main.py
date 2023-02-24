@@ -7,11 +7,13 @@ from pyautoreplay.watcher.legacy import ReplayWatcher, System
 
 if __name__ == '__main__':
     storage_path = Path(sys.argv[1])
-    base_game_path = Path(sys.argv[2])
+    # base_game_path = Path(sys.argv[2])
+    watching_path = Path(sys.argv[2])
     logger.info('Starting replays from {}', storage_path)
     replays_storage_path = Path(storage_path)
     rs = ReplayStorage(replays_storage_path)
-    rw = ReplayWatcher(rs, system=System.WINDOWS)
+    rw = ReplayWatcher(rs, watching_path, system=System.WINDOWS)
+    # rw.watching_path = watching_path
 
     for i, replay in enumerate(rs.replays()):
         if i == 0:
