@@ -13,9 +13,9 @@ class ReplayStorage:
 
     ALL = 'ALL'
 
-    def __init__(self, replays_storage_path: Path):
+    def __init__(self, replays_storage_path: str):
         self.extension = '.rep'
-        self.replays_storage_path = replays_storage_path
+        self.replays_storage_path = Path(replays_storage_path)
 
     def replays(self) -> Iterable:
         replays = list(self.replays_storage_path.glob(f'*{self.extension}'))
@@ -23,8 +23,4 @@ class ReplayStorage:
         for replay_path in replays:
             if not replay_path.is_file():
                 continue
-            logger.info('Watching replay: {}', replay_path)
-            try:
-                yield Replay(replay_path)
-            except:
-                continue
+            yield Replay(replay_path)

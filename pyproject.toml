@@ -13,10 +13,11 @@ loguru = "*"
 jupyter = "*"
 pyautogui = "*"
 tqdm = "*"
-PyGObject = "*"
+PyGObject = { version = "*", optional = true }
 pycairo = "*"
 pydantic = "*"
 
 
 [tool.poetry.extras]
 win32gui = ["win32gui"]
+PyGObject = ["PyGObject"]
