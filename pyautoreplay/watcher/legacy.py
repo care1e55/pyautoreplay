@@ -1,13 +1,13 @@
 import time
 from enum import Enum
+from pathlib import Path
+
 import pyautogui
 from tqdm import tqdm
 from loguru import logger
 
 from pyautoreplay.replay.screp.screp import Replay
 from pyautoreplay.storage.storage import ReplayStorage
-from pyautoreplay.window_manager.debian import UbuntuWmctrlWindowManager
-from pyautoreplay.window_manager.windows import WindowsWindowManager
 
 
 class Action(str, Enum):
@@ -28,28 +28,33 @@ class System(str, Enum):
 
 class ReplayWatcher:
 
-    WATCHING = 'Autoreplay'
-    WINDOW = 'Brood War'
+    WATCHING = r'Autoreplay'
+    WINDOW = r'Brood War'
 
     def __init__(self, storage: ReplayStorage, system: System = System.UBUNTU):
+        print(storage.replays_storage_path)
+        print(self.WATCHING)
+        # self.watching_path = Path(f'{storage.replays_storage_path}\\{self.WATCHING}')
         self.watching_path = storage.replays_storage_path / self.WATCHING
         self.current_replay = None
         if system == System.WINDOWS:
+            from pyautoreplay.window_manager.windows import WindowsWindowManager
             self.window_manager = WindowsWindowManager()
         elif system == System.UBUNTU:
+            from pyautoreplay.window_manager.debian import UbuntuWmctrlWindowManager
             self.window_manager = UbuntuWmctrlWindowManager()
         else:
             raise ValueError('No such window manager')
 
     def watch(self, replay: Replay):
-        self.init_replay()
+        # self.init_replay()
+        # print(f'Watching replay {replay.name} for {replay.duration} seconds')
         for _ in tqdm(range(replay.duration), desc=f'Watching replay {replay.name} for {replay.duration} seconds'):
             time.sleep(1)
         self.exit_replay()
 
     def _do_action(self, key: str, delay: float = 0.2):
         window = self.window_manager.find_window(self.WINDOW)
-        self.window_manager.focus(window)
         time.sleep(delay)
         self._press_key(key)
 

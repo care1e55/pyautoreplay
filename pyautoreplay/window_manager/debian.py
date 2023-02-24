@@ -100,5 +100,6 @@ class UbuntuWmctrlWindowManager(WindowManager):
         for window in self.windows:
             # print(window.name)
             if window.name == name:
+                # self.focus(window)
                 return window
         raise ValueError(f"Window {name} not found")

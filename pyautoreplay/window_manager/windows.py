@@ -1,4 +1,6 @@
 import re
+from time import sleep
+
 import win32gui
 
 from pyautoreplay.window_manager import WindowManager
@@ -11,11 +13,17 @@ class WindowsWindowManager(WindowManager):
         """Constructor"""
         self._handle = None
 
-    def find_window(self, window_name, class_name):
-        """find a window by its class_name"""
-        if window_name:
-            self._handle = win32gui.FindWindow(class_name, window_name)
-            self.set_foreground()
+    # def find_window(self, window_name, class_name):
+    #     """find a window by its class_name"""
+    #     if window_name:
+    #         self._handle = win32gui.FindWindow(class_name, window_name)
+    #         self.set_foreground()
+
+    def find_window(self, name: str):
+        hwnd = win32gui.FindWindow(None, name)
+        self._handle = hwnd
+        self.focus()
+        return hwnd
 
     def _window_enum_callback(self, hwnd, wildcard):
         """Pass to win32gui.EnumWindows() to check all the opened windows"""
@@ -28,6 +36,6 @@ class WindowsWindowManager(WindowManager):
         win32gui.EnumWindows(self._window_enum_callback, wildcard)
         self.set_foreground()
 
-    def set_foreground(self):
+    def focus(self):
         """put the window in the foreground"""
         win32gui.SetForegroundWindow(self._handle)
