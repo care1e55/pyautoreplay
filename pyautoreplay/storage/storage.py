@@ -20,12 +20,7 @@ class ReplayStorage:
     def replays(self) -> Iterable:
         replays = list(self.replays_storage_path.glob(f'*{self.extension}'))
         shuffle(replays)
-        res = []
         for replay_path in replays:
             if not replay_path.is_file():
                 continue
-            res.append(Replay(replay_path))
-            # logger.info('Watching replay: {}', replay_path)
-            # yield Replay(replay_path)
-        return res
-
+            yield Replay(replay_path)

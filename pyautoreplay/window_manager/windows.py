@@ -13,12 +13,6 @@ class WindowsWindowManager(WindowManager):
         """Constructor"""
         self._handle = None
 
-    # def find_window(self, window_name, class_name):
-    #     """find a window by its class_name"""
-    #     if window_name:
-    #         self._handle = win32gui.FindWindow(class_name, window_name)
-    #         self.set_foreground()
-
     def find_window(self, name: str):
         hwnd = win32gui.FindWindow(None, name)
         self._handle = hwnd
