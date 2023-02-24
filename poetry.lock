@@ -932,7 +932,7 @@ name = "mouseinfo"
 version = "0.1.3"
 description = "An application to display XY position and RGB color information for the pixel currently under the mouse. Works on Python 2 and 3."
 category = "dev"
-optional = true
+optional = false
 python-versions = "*"
 files = [
     {file = "MouseInfo-0.1.3.tar.gz", hash = "sha256:2c62fb8885062b8e520a3cce0a297c657adcc08c60952eb05bc8256ef6f7f6e7"},
@@ -1300,7 +1300,7 @@ name = "pyautogui"
 version = "0.9.53"
 description = "PyAutoGUI lets Python control the mouse and keyboard, and other GUI automation tasks. For Windows, macOS, and Linux, on Python 3 and 2."
 category = "dev"
-optional = true
+optional = false
 python-versions = "*"
 files = [
     {file = "PyAutoGUI-0.9.53.tar.gz", hash = "sha256:d31de8f712218d90be7fc98091fce1a12a3e9196e0c814eb9afd73bb2ec97035"},
@@ -1407,7 +1407,7 @@ name = "pygetwindow"
 version = "0.0.9"
 description = "A simple, cross-platform module for obtaining GUI information on application's windows."
 category = "dev"
-optional = true
+optional = false
 python-versions = "*"
 files = [
     {file = "PyGetWindow-0.0.9.tar.gz", hash = "sha256:17894355e7d2b305cd832d717708384017c1698a90ce24f6f7fbf0242dd0a688"},
@@ -1450,7 +1450,7 @@ name = "pymsgbox"
 version = "1.0.9"
 description = "A simple, cross-platform, pure Python module for JavaScript-like message boxes."
 category = "dev"
-optional = true
+optional = false
 python-versions = "*"
 files = [
     {file = "PyMsgBox-1.0.9.tar.gz", hash = "sha256:2194227de8bff7a3d6da541848705a155dcbb2a06ee120d9f280a1d7f51263ff"},
@@ -1461,7 +1461,7 @@ name = "pyobjc"
 version = "9.0.1"
 description = "Python<->ObjC Interoperability Module"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-9.0.1-py3-none-any.whl", hash = "sha256:cf1c26226f23df4cfe65224db9eef03749ec3bf336c389aa2c7736f8c4e51f35"},
@@ -1625,7 +1625,7 @@ name = "pyobjc-core"
 version = "9.0.1"
 description = "Python<->ObjC Interoperability Module"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-core-9.0.1.tar.gz", hash = "sha256:5ce1510bb0bdff527c597079a42b2e13a19b7592e76850be7960a2775b59c929"},
@@ -1642,7 +1642,7 @@ name = "pyobjc-framework-accessibility"
 version = "9.0.1"
 description = "Wrappers for the framework Accessibility on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-Accessibility-9.0.1.tar.gz", hash = "sha256:3dd6bdff7597e454846e6171a6c58da3e414bef1fc155ae4255d49a91da527c3"},
@@ -1661,7 +1661,7 @@ name = "pyobjc-framework-accounts"
 version = "9.0.1"
 description = "Wrappers for the framework Accounts on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-Accounts-9.0.1.tar.gz", hash = "sha256:3cfd824ec78fb1728b9d020d8a91313e25ea862574051da82c0616df57f5fc87"},
@@ -1677,7 +1677,7 @@ name = "pyobjc-framework-addressbook"
 version = "9.0.1"
 description = "Wrappers for the framework AddressBook on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-AddressBook-9.0.1.tar.gz", hash = "sha256:1f2f2426122d69a9a981b8c3d9f408d9d9440a47e31a31f725c09997c7698ff9"},
@@ -1695,7 +1695,7 @@ name = "pyobjc-framework-adservices"
 version = "9.0.1"
 description = "Wrappers for the framework AdServices on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-AdServices-9.0.1.tar.gz", hash = "sha256:d5a3a82990809ec8d4f322d63f0fc02f11c892888e1d91706294b9cb7e15c038"},
@@ -1711,7 +1711,7 @@ name = "pyobjc-framework-adsupport"
 version = "9.0.1"
 description = "Wrappers for the framework AdSupport on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-AdSupport-9.0.1.tar.gz", hash = "sha256:eca02dc5d3c26064883184dab494ed5cdd043681043f4b4ceb290388e5bc6a01"},
@@ -1727,7 +1727,7 @@ name = "pyobjc-framework-applescriptkit"
 version = "9.0.1"
 description = "Wrappers for the framework AppleScriptKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-AppleScriptKit-9.0.1.tar.gz", hash = "sha256:44ea535b4faf77b01c3df0ce4d56e30190a3a3ce62e04a78e010627bd158d857"},
@@ -1743,7 +1743,7 @@ name = "pyobjc-framework-applescriptobjc"
 version = "9.0.1"
 description = "Wrappers for the framework AppleScriptObjC on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-AppleScriptObjC-9.0.1.tar.gz", hash = "sha256:c581c27af7da728a3df4fb6f0dddfcabf905f43815aba7d2c1e440fbcd1b5513"},
@@ -1759,7 +1759,7 @@ name = "pyobjc-framework-applicationservices"
 version = "9.0.1"
 description = "Wrappers for the framework ApplicationServices on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-ApplicationServices-9.0.1.tar.gz", hash = "sha256:e3a350781fdcab6c1da4343dfc54ae3c0523e59e61147432f61dcfb365752fde"},
@@ -1781,7 +1781,7 @@ name = "pyobjc-framework-apptrackingtransparency"
 version = "9.0.1"
 description = "Wrappers for the framework AppTrackingTransparency on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-AppTrackingTransparency-9.0.1.tar.gz", hash = "sha256:90f31de4c9fb91d28a9a2625dcb2ec3890a435301237860b99cedbb455cc8ae4"},
@@ -1797,7 +1797,7 @@ name = "pyobjc-framework-audiovideobridging"
 version = "9.0.1"
 description = "Wrappers for the framework AudioVideoBridging on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-AudioVideoBridging-9.0.1.tar.gz", hash = "sha256:11da47b7024e8616d74ae786cbe1f8767c9097d097bf4d6da8a5d024f7f32b27"},
@@ -1813,7 +1813,7 @@ name = "pyobjc-framework-authenticationservices"
 version = "9.0.1"
 description = "Wrappers for the framework AuthenticationServices on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-AuthenticationServices-9.0.1.tar.gz", hash = "sha256:746b02771f1b53d4649a1014b8986aa595100790202fd3e9f8160074ceb0083b"},
@@ -1831,7 +1831,7 @@ name = "pyobjc-framework-automaticassessmentconfiguration"
 version = "9.0.1"
 description = "Wrappers for the framework AutomaticAssessmentConfiguration on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-AutomaticAssessmentConfiguration-9.0.1.tar.gz", hash = "sha256:2f79daec218f27f0941253238d8ea22d17bf37f9cc3af8ab0ef264c27575a9aa"},
@@ -1849,7 +1849,7 @@ name = "pyobjc-framework-automator"
 version = "9.0.1"
 description = "Wrappers for the framework Automator on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-Automator-9.0.1.tar.gz", hash = "sha256:862f71d0778c6adfb1ae5b3d5af9363ca6e04d41e7fb1099d9759a86e83f60cf"},
@@ -1865,7 +1865,7 @@ name = "pyobjc-framework-avfoundation"
 version = "9.0.1"
 description = "Wrappers for the framework AVFoundation on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-AVFoundation-9.0.1.tar.gz", hash = "sha256:4afa1d9b2bdf73b8d776f857b217942382c019a709697d266aa9c48b3f9cc620"},
@@ -1886,7 +1886,7 @@ name = "pyobjc-framework-avkit"
 version = "9.0.1"
 description = "Wrappers for the framework AVKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-AVKit-9.0.1.tar.gz", hash = "sha256:382815a5ffab7444cade994cc3335898eaf25fd627af2adf7a5a9d982a62a273"},
@@ -1905,7 +1905,7 @@ name = "pyobjc-framework-avrouting"
 version = "9.0.1"
 description = "Wrappers for the framework AVRouting on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-AVRouting-9.0.1.tar.gz", hash = "sha256:1236a46bece3766383b3bd73d78f49e9b501cc9824474c3db6bfc2ab84cb3cb4"},
@@ -1923,7 +1923,7 @@ name = "pyobjc-framework-backgroundassets"
 version = "9.0.1"
 description = "Wrappers for the framework BackgroundAssets on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-BackgroundAssets-9.0.1.tar.gz", hash = "sha256:354c3602e55f93fd7bb08bf6468db62972c02da8b05bfa3e41dd0aa532e085ce"},
@@ -1941,7 +1941,7 @@ name = "pyobjc-framework-businesschat"
 version = "9.0.1"
 description = "Wrappers for the framework BusinessChat on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-BusinessChat-9.0.1.tar.gz", hash = "sha256:18e8343e714fb9ef68c75124ec74658bd8f188fbdf266f7dca0b04d46dedf6dd"},
@@ -1957,7 +1957,7 @@ name = "pyobjc-framework-calendarstore"
 version = "9.0.1"
 description = "Wrappers for the framework CalendarStore on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-CalendarStore-9.0.1.tar.gz", hash = "sha256:69cb60ae61ee35cd6bac613fc2429903884211bc9f2df994029b308dddfb891a"},
@@ -1973,7 +1973,7 @@ name = "pyobjc-framework-callkit"
 version = "9.0.1"
 description = "Wrappers for the framework CallKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-CallKit-9.0.1.tar.gz", hash = "sha256:375c143c768d926e79d77a8cbf7394a4107a74c19b84f83b044a3cc2773022a4"},
@@ -1989,7 +1989,7 @@ name = "pyobjc-framework-cfnetwork"
 version = "9.0.1"
 description = "Wrappers for the framework CFNetwork on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-CFNetwork-9.0.1.tar.gz", hash = "sha256:7f0c05d1575bbf2de31fe38ee8ff18840640463ad530827af88cfbca817e130b"},
@@ -2007,7 +2007,7 @@ name = "pyobjc-framework-classkit"
 version = "9.0.1"
 description = "Wrappers for the framework ClassKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-ClassKit-9.0.1.tar.gz", hash = "sha256:35aa002e9d24a86e0b41edef11522ab0b5dc4336c7ddaa4951ddb0e02054fbed"},
@@ -2025,7 +2025,7 @@ name = "pyobjc-framework-cloudkit"
 version = "9.0.1"
 description = "Wrappers for the framework CloudKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-CloudKit-9.0.1.tar.gz", hash = "sha256:2cc56ddfecb6c4463a6cb83a405a1ee57b1cb008a6bc529ca95824163cc93ed0"},
@@ -2044,7 +2044,7 @@ name = "pyobjc-framework-cocoa"
 version = "9.0.1"
 description = "Wrappers for the Cocoa frameworks on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-Cocoa-9.0.1.tar.gz", hash = "sha256:a8b53b3426f94307a58e2f8214dc1094c19afa9dcb96f21be12f937d968b2df3"},
@@ -2064,7 +2064,7 @@ name = "pyobjc-framework-collaboration"
 version = "9.0.1"
 description = "Wrappers for the framework Collaboration on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-Collaboration-9.0.1.tar.gz", hash = "sha256:9b61a3c113c0eaefa5a21effd3e28f3cc5955faad385b7ddba2a5df44f68a1d2"},
@@ -2080,7 +2080,7 @@ name = "pyobjc-framework-colorsync"
 version = "9.0.1"
 description = "Wrappers for the framework ColorSync on Mac OS X"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-ColorSync-9.0.1.tar.gz", hash = "sha256:05835196a81a9362d3a263a4092c6c6709ca48ef218d233cf2ec69f5c57a9266"},
@@ -2096,7 +2096,7 @@ name = "pyobjc-framework-contacts"
 version = "9.0.1"
 description = "Wrappers for the framework Contacts on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-Contacts-9.0.1.tar.gz", hash = "sha256:b58f12b9b42b1c33215ebb90663b8e44d53001f2c169e889008ddc715b349e5f"},
@@ -2114,7 +2114,7 @@ name = "pyobjc-framework-contactsui"
 version = "9.0.1"
 description = "Wrappers for the framework ContactsUI on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-ContactsUI-9.0.1.tar.gz", hash = "sha256:235d7692b2ec778d31568d8996cad36b2497bb273f309f8976c5239c77242a75"},
@@ -2133,7 +2133,7 @@ name = "pyobjc-framework-coreaudio"
 version = "9.0.1"
 description = "Wrappers for the framework CoreAudio on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-CoreAudio-9.0.1.tar.gz", hash = "sha256:f02a1d61296b38d82477cbcbb2ddd4e8585e88b0dabbf8655450690c1bfb7254"},
@@ -2154,7 +2154,7 @@ name = "pyobjc-framework-coreaudiokit"
 version = "9.0.1"
 description = "Wrappers for the framework CoreAudioKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-CoreAudioKit-9.0.1.tar.gz", hash = "sha256:61a39f00e25214486be432fd31eb2b9d8e54da9a1361b9b3a1025201876417ef"},
@@ -2173,7 +2173,7 @@ name = "pyobjc-framework-corebluetooth"
 version = "9.0.1"
 description = "Wrappers for the framework CoreBluetooth on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-CoreBluetooth-9.0.1.tar.gz", hash = "sha256:bf008d7bfe13cda12a43ed82346acfad262e90824086b145394c154531b51841"},
@@ -2191,7 +2191,7 @@ name = "pyobjc-framework-coredata"
 version = "9.0.1"
 description = "Wrappers for the framework CoreData on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-CoreData-9.0.1.tar.gz", hash = "sha256:aca27739366621c6986651f0ea68d47341b1e9b2bf0f118b6972a68ebdab7abd"},
@@ -2209,7 +2209,7 @@ name = "pyobjc-framework-corehaptics"
 version = "9.0.1"
 description = "Wrappers for the framework CoreHaptics on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-CoreHaptics-9.0.1.tar.gz", hash = "sha256:cb5e08a19509d7bc00a9e17a0b412a66aee64aa020dd0114767603b1aa1da789"},
@@ -2225,7 +2225,7 @@ name = "pyobjc-framework-corelocation"
 version = "9.0.1"
 description = "Wrappers for the framework CoreLocation on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-CoreLocation-9.0.1.tar.gz", hash = "sha256:a1454ed210ffb3eb46df3876741fabe8ebe7b877074868df9ee550345a6ee6d5"},
@@ -2243,7 +2243,7 @@ name = "pyobjc-framework-coremedia"
 version = "9.0.1"
 description = "Wrappers for the framework CoreMedia on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-CoreMedia-9.0.1.tar.gz", hash = "sha256:0d99adad1404525f44a2493b3fe73c3ded61c67f2973c4d940ff9fafb3f85d8f"},
@@ -2264,7 +2264,7 @@ name = "pyobjc-framework-coremediaio"
 version = "9.0.1"
 description = "Wrappers for the framework CoreMediaIO on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-CoreMediaIO-9.0.1.tar.gz", hash = "sha256:0e561f1c4de73495d87bef01649cb777338b149808dcd90ded5bbc14e4bd5e0e"},
@@ -2282,7 +2282,7 @@ name = "pyobjc-framework-coremidi"
 version = "9.0.1"
 description = "Wrappers for the framework CoreMIDI on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-CoreMIDI-9.0.1.tar.gz", hash = "sha256:b0294311db2f9421cfad4aafaa925c1e649faf3847fb3c6c9cd9892e094783c3"},
@@ -2300,7 +2300,7 @@ name = "pyobjc-framework-coreml"
 version = "9.0.1"
 description = "Wrappers for the framework CoreML on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-CoreML-9.0.1.tar.gz", hash = "sha256:216731388c85a2d8d00b6d9045e4637b5375c8777fe59795edd8e91a0cb2c4aa"},
@@ -2318,7 +2318,7 @@ name = "pyobjc-framework-coremotion"
 version = "9.0.1"
 description = "Wrappers for the framework CoreMotion on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-CoreMotion-9.0.1.tar.gz", hash = "sha256:7a5d2e9e2134779902dbfee8f1d8d9b3920f7399a85b5f8c91079600788423f6"},
@@ -2339,7 +2339,7 @@ name = "pyobjc-framework-coreservices"
 version = "9.0.1"
 description = "Wrappers for the framework CoreServices on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-CoreServices-9.0.1.tar.gz", hash = "sha256:35dee25133c935593b8eb71333166b9b69b25a85e2d648eaabd9fa1eec57d10f"},
@@ -2357,7 +2357,7 @@ name = "pyobjc-framework-corespotlight"
 version = "9.0.1"
 description = "Wrappers for the framework CoreSpotlight on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-CoreSpotlight-9.0.1.tar.gz", hash = "sha256:c436faf70d29f0eabb22b0c3f96189bc1168dc8ab6f1872b0618e3c7accbcfeb"},
@@ -2375,7 +2375,7 @@ name = "pyobjc-framework-coretext"
 version = "9.0.1"
 description = "Wrappers for the framework CoreText on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-CoreText-9.0.1.tar.gz", hash = "sha256:0128b6360a492a2a6560f36ae4fb721991b545faed4da1dab3664d8ed2083676"},
@@ -2397,7 +2397,7 @@ name = "pyobjc-framework-corewlan"
 version = "9.0.1"
 description = "Wrappers for the framework CoreWLAN on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-CoreWLAN-9.0.1.tar.gz", hash = "sha256:1193f2d06c92ec8afe7438c3110957f599ee39d2ccdfc2fcabb749306faacbae"},
@@ -2415,7 +2415,7 @@ name = "pyobjc-framework-cryptotokenkit"
 version = "9.0.1"
 description = "Wrappers for the framework CryptoTokenKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-CryptoTokenKit-9.0.1.tar.gz", hash = "sha256:b2f88362a2a9cc4b2e1df3163a2ad931f8db02a617f8536a630cc5bf6a64774c"},
@@ -2433,7 +2433,7 @@ name = "pyobjc-framework-datadetection"
 version = "9.0.1"
 description = "Wrappers for the framework DataDetection on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-DataDetection-9.0.1.tar.gz", hash = "sha256:cfe623dec691e6e58ad9e057173b929f88292860a41aab26033dcad002b4ca57"},
@@ -2449,7 +2449,7 @@ name = "pyobjc-framework-devicecheck"
 version = "9.0.1"
 description = "Wrappers for the framework DeviceCheck on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-DeviceCheck-9.0.1.tar.gz", hash = "sha256:e866c3dd80dc91c8d88bd0e8065d9b2c366ee061b5597f1ea6be1a3fc0efd6df"},
@@ -2465,7 +2465,7 @@ name = "pyobjc-framework-dictionaryservices"
 version = "9.0.1"
 description = "Wrappers for the framework DictionaryServices on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-DictionaryServices-9.0.1.tar.gz", hash = "sha256:c14357e58047ec92f9bd9e3c3bdbf06e66f2b7793300209faab760583d61e074"},
@@ -2481,7 +2481,7 @@ name = "pyobjc-framework-discrecording"
 version = "9.0.1"
 description = "Wrappers for the framework DiscRecording on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-DiscRecording-9.0.1.tar.gz", hash = "sha256:06def981e8c25e6c51e8918eedfb56fa983f2b71f1c7ae43a54f84416dc75d69"},
@@ -2499,7 +2499,7 @@ name = "pyobjc-framework-discrecordingui"
 version = "9.0.1"
 description = "Wrappers for the framework DiscRecordingUI on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-DiscRecordingUI-9.0.1.tar.gz", hash = "sha256:db61399c2661232df599509db23e3c1ad2175bface2018d9e18e9240b4f181d4"},
@@ -2516,7 +2516,7 @@ name = "pyobjc-framework-diskarbitration"
 version = "9.0.1"
 description = "Wrappers for the framework DiskArbitration on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-DiskArbitration-9.0.1.tar.gz", hash = "sha256:22a9f1bdd54822e65795a971f2a5e951ef89817cd6ad06d0ff1981b694942c3e"},
@@ -2532,7 +2532,7 @@ name = "pyobjc-framework-dvdplayback"
 version = "9.0.1"
 description = "Wrappers for the framework DVDPlayback on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-DVDPlayback-9.0.1.tar.gz", hash = "sha256:8593bbb207ff9287d97ad24e837b88b948ee79bd4f0ae2ae9e7ca449f2e4dc25"},
@@ -2548,7 +2548,7 @@ name = "pyobjc-framework-eventkit"
 version = "9.0.1"
 description = "Wrappers for the framework Accounts on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-EventKit-9.0.1.tar.gz", hash = "sha256:d6364f5a8858d4f806248be3ce0e7f30acae3943980ae4801c8d520623b9fed4"},
@@ -2564,7 +2564,7 @@ name = "pyobjc-framework-exceptionhandling"
 version = "9.0.1"
 description = "Wrappers for the framework ExceptionHandling on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-ExceptionHandling-9.0.1.tar.gz", hash = "sha256:9070bd892cc325f7f49a134007ffc30a6d2e5caa7a4fe0716bd19622b107e4e0"},
@@ -2580,7 +2580,7 @@ name = "pyobjc-framework-executionpolicy"
 version = "9.0.1"
 description = "Wrappers for the framework ExecutionPolicy on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-ExecutionPolicy-9.0.1.tar.gz", hash = "sha256:16bb5e1b26049d5cbf3f66cec40ee0ccb9cbb57594ee9d5abb1e9cde0572d2e5"},
@@ -2596,7 +2596,7 @@ name = "pyobjc-framework-extensionkit"
 version = "9.0.1"
 description = "Wrappers for the framework ExtensionKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-ExtensionKit-9.0.1.tar.gz", hash = "sha256:9752522f5e681c2e19519ff8b0bdaad0e48e33e6c5b23bdcec37ef997573a013"},
@@ -2614,7 +2614,7 @@ name = "pyobjc-framework-externalaccessory"
 version = "9.0.1"
 description = "Wrappers for the framework ExternalAccessory on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-ExternalAccessory-9.0.1.tar.gz", hash = "sha256:533f2a814ab9afcc8594d34f761017d30f0b66518af682fbcafc16b5cd612078"},
@@ -2632,7 +2632,7 @@ name = "pyobjc-framework-fileprovider"
 version = "9.0.1"
 description = "Wrappers for the framework FileProvider on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-FileProvider-9.0.1.tar.gz", hash = "sha256:80405ce146e2556a36a3918f7fa37d60905d9338483cb0521415a10dffb6027e"},
@@ -2653,7 +2653,7 @@ name = "pyobjc-framework-fileproviderui"
 version = "9.0.1"
 description = "Wrappers for the framework FileProviderUI on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-FileProviderUI-9.0.1.tar.gz", hash = "sha256:a93161410e66150131cc32ca99749950be870b47f8f599ea4b112c5125ac1a27"},
@@ -2669,7 +2669,7 @@ name = "pyobjc-framework-findersync"
 version = "9.0.1"
 description = "Wrappers for the framework FinderSync on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-FinderSync-9.0.1.tar.gz", hash = "sha256:1661bac4eda64015f331b15fea394a9e10f4778d0307bb9933b9400de7fbb575"},
@@ -2685,7 +2685,7 @@ name = "pyobjc-framework-fsevents"
 version = "9.0.1"
 description = "Wrappers for the framework FSEvents on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-FSEvents-9.0.1.tar.gz", hash = "sha256:31643db10d27f712a701ca0864adf78426b19d7b3c56dbf0053d13ab4f2f4ae6"},
@@ -2703,7 +2703,7 @@ name = "pyobjc-framework-gamecenter"
 version = "9.0.1"
 description = "Wrappers for the framework GameCenter on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-GameCenter-9.0.1.tar.gz", hash = "sha256:a3a4e7207bc63ec4a9f522781fe4081bff3d03ebc9d773d2b4f8da788ebb6068"},
@@ -2721,7 +2721,7 @@ name = "pyobjc-framework-gamecontroller"
 version = "9.0.1"
 description = "Wrappers for the framework GameController on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-GameController-9.0.1.tar.gz", hash = "sha256:1a9c3d30a26a249217599be64ae93a0ee9b331b2e2461a30165c646b2e473cfb"},
@@ -2739,7 +2739,7 @@ name = "pyobjc-framework-gamekit"
 version = "9.0.1"
 description = "Wrappers for the framework GameKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-GameKit-9.0.1.tar.gz", hash = "sha256:dba15ad934f048950fb4b8aeaeb79b9c11575970a5ab696d2f37ccce952f669d"},
@@ -2758,7 +2758,7 @@ name = "pyobjc-framework-gameplaykit"
 version = "9.0.1"
 description = "Wrappers for the framework GameplayKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-GameplayKit-9.0.1.tar.gz", hash = "sha256:a5419cf0d93dfc3cf3937ffbcdb6bf8a4d0ff0f2bab04e3932ec92428c269195"},
@@ -2777,7 +2777,7 @@ name = "pyobjc-framework-healthkit"
 version = "9.0.1"
 description = "Wrappers for the framework HealthKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-HealthKit-9.0.1.tar.gz", hash = "sha256:b8cc849bbdfff195472775be6872ee630e764fa34a362b8ee1ddfe78c4201099"},
@@ -2795,7 +2795,7 @@ name = "pyobjc-framework-imagecapturecore"
 version = "9.0.1"
 description = "Wrappers for the framework ImageCaptureCore on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-ImageCaptureCore-9.0.1.tar.gz", hash = "sha256:03a236cb727269ee274e8aeeb970b1eaad10bae7be1b84167253a34cd155fb27"},
@@ -2813,7 +2813,7 @@ name = "pyobjc-framework-imserviceplugin"
 version = "9.0.1"
 description = "Wrappers for the framework IMServicePlugIn on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-IMServicePlugIn-9.0.1.tar.gz", hash = "sha256:8ff9078907ca322329c7b69b5eed5a597d46846c840c1056cee63864bb6da832"},
@@ -2831,7 +2831,7 @@ name = "pyobjc-framework-inputmethodkit"
 version = "9.0.1"
 description = "Wrappers for the framework InputMethodKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-InputMethodKit-9.0.1.tar.gz", hash = "sha256:c948359e0abcfd3a2287edc35b149afa7b490e74a32bf08c6020b13e54107e82"},
@@ -2849,7 +2849,7 @@ name = "pyobjc-framework-installerplugins"
 version = "9.0.1"
 description = "Wrappers for the framework InstallerPlugins on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-InstallerPlugins-9.0.1.tar.gz", hash = "sha256:9697f42c49691e269902be9ce32382e0275fd3e5802219da29bf1973c2a3b017"},
@@ -2865,7 +2865,7 @@ name = "pyobjc-framework-instantmessage"
 version = "9.0.1"
 description = "Wrappers for the framework InstantMessage on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-InstantMessage-9.0.1.tar.gz", hash = "sha256:4996b7a0d63dcff710ed3463ee27027586d1d9585efedf608e265465064d0a48"},
@@ -2882,7 +2882,7 @@ name = "pyobjc-framework-intents"
 version = "9.0.1"
 description = "Wrappers for the framework Intents on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-Intents-9.0.1.tar.gz", hash = "sha256:556494335d12cefd7344ac1f6a371d6d0a6a573d876cc82fdbdfd351535fc42e"},
@@ -2900,7 +2900,7 @@ name = "pyobjc-framework-intentsui"
 version = "9.0.1"
 description = "Wrappers for the framework Intents on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-IntentsUI-9.0.1.tar.gz", hash = "sha256:f25a4eb6afa8d7c33450a6e718576178d23af00bad522ca20554bd869bc35038"},
@@ -2921,7 +2921,7 @@ name = "pyobjc-framework-iosurface"
 version = "9.0.1"
 description = "Wrappers for the framework IOSurface on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-IOSurface-9.0.1.tar.gz", hash = "sha256:1fcaf483c0bad50363b03cc154b32e66adbab91151a3856051e6b2570fa8990c"},
@@ -2937,7 +2937,7 @@ name = "pyobjc-framework-ituneslibrary"
 version = "9.0.1"
 description = "Wrappers for the framework iTunesLibrary on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-iTunesLibrary-9.0.1.tar.gz", hash = "sha256:cd4bdd1ac154b9d279c4d62fc89901392468d1e0e7aa12a5dbcdf6dff5a8c572"},
@@ -2953,7 +2953,7 @@ name = "pyobjc-framework-kernelmanagement"
 version = "9.0.1"
 description = "Wrappers for the framework KernelManagement on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-KernelManagement-9.0.1.tar.gz", hash = "sha256:22a536ec5309e96dbbc4345f400b20b9619bff645d4079eba27059d4c026cc10"},
@@ -2969,7 +2969,7 @@ name = "pyobjc-framework-latentsemanticmapping"
 version = "9.0.1"
 description = "Wrappers for the framework LatentSemanticMapping on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-LatentSemanticMapping-9.0.1.tar.gz", hash = "sha256:942fb8850ffd0056ab55f9fa599bbdd71bb970fa324014de21db83d152608bc9"},
@@ -2985,7 +2985,7 @@ name = "pyobjc-framework-launchservices"
 version = "9.0.1"
 description = "Wrappers for the framework LaunchServices on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-LaunchServices-9.0.1.tar.gz", hash = "sha256:d448e7990f0e00994bfa2eb9c1413c5a3e07fec84dd7facfabe1162f2e38a65f"},
@@ -3001,7 +3001,7 @@ name = "pyobjc-framework-libdispatch"
 version = "9.0.1"
 description = "Wrappers for libdispatch on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-libdispatch-9.0.1.tar.gz", hash = "sha256:988c4c8608f2059c8b80ac520bc8d20a46ff85f65c50749110c45df610141fce"},
@@ -3021,7 +3021,7 @@ name = "pyobjc-framework-linkpresentation"
 version = "9.0.1"
 description = "Wrappers for the framework LinkPresentation on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-LinkPresentation-9.0.1.tar.gz", hash = "sha256:f3f6935ded8ff58b41fb31b149535b7838ca7a575e38949e039d226749227bdc"},
@@ -3038,7 +3038,7 @@ name = "pyobjc-framework-localauthentication"
 version = "9.0.1"
 description = "Wrappers for the framework LocalAuthentication on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-LocalAuthentication-9.0.1.tar.gz", hash = "sha256:f440325d33b4ce87200f876940c6d89c91a80bdbfc4926d174a5f11cd664c3dd"},
@@ -3055,7 +3055,7 @@ name = "pyobjc-framework-localauthenticationembeddedui"
 version = "9.0.1"
 description = "Wrappers for the framework LocalAuthenticationEmbeddedUI on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-LocalAuthenticationEmbeddedUI-9.0.1.tar.gz", hash = "sha256:cdfe1b35b7ffa4c57113c5aced5536b121a2edd2ef1ac7014cf23d25e354c524"},
@@ -3072,7 +3072,7 @@ name = "pyobjc-framework-mailkit"
 version = "9.0.1"
 description = "Wrappers for the framework MailKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-MailKit-9.0.1.tar.gz", hash = "sha256:5029867ff09c3ff33d1754a3d57c8c02d20810fab75821432e9bb5e9dea71629"},
@@ -3088,7 +3088,7 @@ name = "pyobjc-framework-mapkit"
 version = "9.0.1"
 description = "Wrappers for the framework MapKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-MapKit-9.0.1.tar.gz", hash = "sha256:70a0f31276ff51e5ff2d6657681b38121ad5e893db3bb170a2f4d7a22458622b"},
@@ -3108,7 +3108,7 @@ name = "pyobjc-framework-mediaaccessibility"
 version = "9.0.1"
 description = "Wrappers for the framework MediaAccessibility on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-MediaAccessibility-9.0.1.tar.gz", hash = "sha256:c6d864b0fa65d157ce1b621f5cde4023c20d1242cf9eafb2a5e54b021c1789a8"},
@@ -3124,7 +3124,7 @@ name = "pyobjc-framework-medialibrary"
 version = "9.0.1"
 description = "Wrappers for the framework MediaLibrary on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-MediaLibrary-9.0.1.tar.gz", hash = "sha256:33115e19393fe807c37989eaa7f947a4d338fab2e10d0864b4a9b0f65edbdc89"},
@@ -3141,7 +3141,7 @@ name = "pyobjc-framework-mediaplayer"
 version = "9.0.1"
 description = "Wrappers for the framework MediaPlayer on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-MediaPlayer-9.0.1.tar.gz", hash = "sha256:d070e6cbc408fee2a086b467982489acf9665cdd2cd8d32bb72b4ed75388d5d5"},
@@ -3157,7 +3157,7 @@ name = "pyobjc-framework-mediatoolbox"
 version = "9.0.1"
 description = "Wrappers for the framework MediaToolbox on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-MediaToolbox-9.0.1.tar.gz", hash = "sha256:7a6e32e9b3d6e641a982ad7ab00b6b750ea8c1033927d0ba4042c9a0eb2ae9f2"},
@@ -3175,7 +3175,7 @@ name = "pyobjc-framework-metal"
 version = "9.0.1"
 description = "Wrappers for the framework Metal on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-Metal-9.0.1.tar.gz", hash = "sha256:18ab8fb1ce2255b3527c2a0f3dee34739f5c4a0c9c11b4dcb7336d66a19c230c"},
@@ -3193,7 +3193,7 @@ name = "pyobjc-framework-metalfx"
 version = "9.0.1"
 description = "Wrappers for the framework MetalFX on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-MetalFX-9.0.1.tar.gz", hash = "sha256:4c3657c10054f882788c9f9ced2fb8a43501229b0ef4a77070f02f38b021d760"},
@@ -3211,7 +3211,7 @@ name = "pyobjc-framework-metalkit"
 version = "9.0.1"
 description = "Wrappers for the framework MetalKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-MetalKit-9.0.1.tar.gz", hash = "sha256:dc6087557e83d67adb907976d8c22954c8e984488ceed773cecffc9cc04e897e"},
@@ -3230,7 +3230,7 @@ name = "pyobjc-framework-metalperformanceshaders"
 version = "9.0.1"
 description = "Wrappers for the framework MetalPerformanceShaders on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-MetalPerformanceShaders-9.0.1.tar.gz", hash = "sha256:ecddfef23bbdd4f9942bdeabbcbc037c7256e49ed4646707672cf977e00f92c1"},
@@ -3248,7 +3248,7 @@ name = "pyobjc-framework-metalperformanceshadersgraph"
 version = "9.0.1"
 description = "Wrappers for the framework MetalPerformanceShadersGraph on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-MetalPerformanceShadersGraph-9.0.1.tar.gz", hash = "sha256:0b8f58b824d01152c2430d8329e94792cf75a535930501326a3a4eaf79b6c581"},
@@ -3264,7 +3264,7 @@ name = "pyobjc-framework-metrickit"
 version = "9.0.1"
 description = "Wrappers for the framework MetricKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-MetricKit-9.0.1.tar.gz", hash = "sha256:81260069f8319ecf402968364ebe5af683e568f74cdb6d0005043238473462dc"},
@@ -3285,7 +3285,7 @@ name = "pyobjc-framework-mlcompute"
 version = "9.0.1"
 description = "Wrappers for the framework MLCompute on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-MLCompute-9.0.1.tar.gz", hash = "sha256:fd02e90f0e18999decaca7e647be64b40a8d30bf47b3d90ddf7b322b6c9315b4"},
@@ -3301,7 +3301,7 @@ name = "pyobjc-framework-modelio"
 version = "9.0.1"
 description = "Wrappers for the framework ModelIO on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-ModelIO-9.0.1.tar.gz", hash = "sha256:3ab77928b28497bcd1fd4b17bf32fb9b16dbe385344c2ed33ea259770c6b2709"},
@@ -3320,7 +3320,7 @@ name = "pyobjc-framework-multipeerconnectivity"
 version = "9.0.1"
 description = "Wrappers for the framework MultipeerConnectivity on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-MultipeerConnectivity-9.0.1.tar.gz", hash = "sha256:8d47607dddb5e13a64e27a7a23194573c6d478f9c8e27d1c4283949fc6adfdad"},
@@ -3338,7 +3338,7 @@ name = "pyobjc-framework-naturallanguage"
 version = "9.0.1"
 description = "Wrappers for the framework NaturalLanguage on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-NaturalLanguage-9.0.1.tar.gz", hash = "sha256:89f880ecd93fc7e4e6a82fd9dbc99f75ae0526fb2e5edfb59f7ec2ba5568c919"},
@@ -3354,7 +3354,7 @@ name = "pyobjc-framework-netfs"
 version = "9.0.1"
 description = "Wrappers for the framework NetFS on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-NetFS-9.0.1.tar.gz", hash = "sha256:da9c0ee6f92dbde748c2526d7c08cb1b00a40af93b8928564d2a1213bd223d20"},
@@ -3370,7 +3370,7 @@ name = "pyobjc-framework-network"
 version = "9.0.1"
 description = "Wrappers for the framework Network on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-Network-9.0.1.tar.gz", hash = "sha256:51840027f24f555249db93261b111173408a2736c9aabad4732e7b74117f12cf"},
@@ -3388,7 +3388,7 @@ name = "pyobjc-framework-networkextension"
 version = "9.0.1"
 description = "Wrappers for the framework NetworkExtension on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-NetworkExtension-9.0.1.tar.gz", hash = "sha256:a6de4020f52eda61cfb86260782cd547d0d701702ce1d90edd497a155c0157e9"},
@@ -3406,7 +3406,7 @@ name = "pyobjc-framework-notificationcenter"
 version = "9.0.1"
 description = "Wrappers for the framework NotificationCenter on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-NotificationCenter-9.0.1.tar.gz", hash = "sha256:24331121e8dd0d7f18ce04a2d696922fe87494426a7903955b413572a6b2096b"},
@@ -3424,7 +3424,7 @@ name = "pyobjc-framework-opendirectory"
 version = "9.0.1"
 description = "Wrappers for the framework OpenDirectory on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-OpenDirectory-9.0.1.tar.gz", hash = "sha256:89db260295add0ec107980b7593ce06931f3916c0f7fdb92788fdacbe9cd95de"},
@@ -3440,7 +3440,7 @@ name = "pyobjc-framework-osakit"
 version = "9.0.1"
 description = "Wrappers for the framework OSAKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-OSAKit-9.0.1.tar.gz", hash = "sha256:c20b9464f5ea0945f8f1b1eaeb0e4358b070854cebd6ce87d772a6c9dc0e8ccd"},
@@ -3456,7 +3456,7 @@ name = "pyobjc-framework-oslog"
 version = "9.0.1"
 description = "Wrappers for the framework OSLog on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-OSLog-9.0.1.tar.gz", hash = "sha256:964499ffc06ba3b347ef8a96d99a882ee5b5abdbc55c17722344c1d4535ec4f9"},
@@ -3476,7 +3476,7 @@ name = "pyobjc-framework-passkit"
 version = "9.0.1"
 description = "Wrappers for the framework PassKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-PassKit-9.0.1.tar.gz", hash = "sha256:3d422c41465baa6a9e7f0f4e85cb8dc773103dcbee1d284ca90ce49d036540ae"},
@@ -3494,7 +3494,7 @@ name = "pyobjc-framework-pencilkit"
 version = "9.0.1"
 description = "Wrappers for the framework PencilKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-PencilKit-9.0.1.tar.gz", hash = "sha256:b2f0e8fca577f41e696389bc2571e316382aab22183932180f621c413d7caa9f"},
@@ -3510,7 +3510,7 @@ name = "pyobjc-framework-photos"
 version = "9.0.1"
 description = "Wrappers for the framework Photos on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-Photos-9.0.1.tar.gz", hash = "sha256:26bb7e2e92deb52d1641ae61faa095ef06dded2d245e00d0fe8be651e062f378"},
@@ -3528,7 +3528,7 @@ name = "pyobjc-framework-photosui"
 version = "9.0.1"
 description = "Wrappers for the framework PhotosUI on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-PhotosUI-9.0.1.tar.gz", hash = "sha256:9fe98cb87dc2547612ae339f7d239c62eec7736e0cc24de2bb572adb3c5df2a8"},
@@ -3546,7 +3546,7 @@ name = "pyobjc-framework-preferencepanes"
 version = "9.0.1"
 description = "Wrappers for the framework PreferencePanes on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-PreferencePanes-9.0.1.tar.gz", hash = "sha256:cf15472798ba16f0097326de1bb42e46f78b6c40447f528fe732cfee500e13a1"},
@@ -3562,7 +3562,7 @@ name = "pyobjc-framework-pubsub"
 version = "9.0.1"
 description = "Wrappers for the framework PubSub on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-PubSub-9.0.1.tar.gz", hash = "sha256:18c96b948e4575c26f4b43e5532755d31b9228bd00c5d39b2977dc67dd47361a"},
@@ -3578,7 +3578,7 @@ name = "pyobjc-framework-pushkit"
 version = "9.0.1"
 description = "Wrappers for the framework PushKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-PushKit-9.0.1.tar.gz", hash = "sha256:444102fce2244cf8fc3853848707643c4bf204e60bf720687da69fc9982efef3"},
@@ -3596,7 +3596,7 @@ name = "pyobjc-framework-quartz"
 version = "9.0.1"
 description = "Wrappers for the Quartz frameworks on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-Quartz-9.0.1.tar.gz", hash = "sha256:7e2e37fc5c01bbdc37c1355d886e6184d1977043d5a05d1d956573fa8503dac3"},
@@ -3617,7 +3617,7 @@ name = "pyobjc-framework-quicklookthumbnailing"
 version = "9.0.1"
 description = "Wrappers for the framework QuickLookThumbnailing on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-QuickLookThumbnailing-9.0.1.tar.gz", hash = "sha256:72ca8581820e4a431e9518cddcb0b00c3a1d0c234dfd996b3969d3e6208e1cdb"},
@@ -3634,7 +3634,7 @@ name = "pyobjc-framework-replaykit"
 version = "9.0.1"
 description = "Wrappers for the framework ReplayKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-ReplayKit-9.0.1.tar.gz", hash = "sha256:6242ca6f61458f5d0aea53a8d0ec5dc1bf32bce018a169b8293c17a0b7ba0e6b"},
@@ -3652,7 +3652,7 @@ name = "pyobjc-framework-safariservices"
 version = "9.0.1"
 description = "Wrappers for the framework SafariServices on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-SafariServices-9.0.1.tar.gz", hash = "sha256:a6433583192e30f7f70b0d3282237389f56bfc1ab3ac00fc616606b869e9e0d8"},
@@ -3670,7 +3670,7 @@ name = "pyobjc-framework-safetykit"
 version = "9.0.1"
 description = "Wrappers for the framework SafetyKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-SafetyKit-9.0.1.tar.gz", hash = "sha256:afa2b0012555c9f5b390d1fd8d4283bcb0ede09c9b109f5fdc4143e103a12627"},
@@ -3689,7 +3689,7 @@ name = "pyobjc-framework-scenekit"
 version = "9.0.1"
 description = "Wrappers for the framework SceneKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-SceneKit-9.0.1.tar.gz", hash = "sha256:55861c560bfc987236100e68e4ecd39155888492e392a4caa78991e314f86f59"},
@@ -3708,7 +3708,7 @@ name = "pyobjc-framework-screencapturekit"
 version = "9.0.1"
 description = "Wrappers for the framework ScreenCaptureKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-ScreenCaptureKit-9.0.1.tar.gz", hash = "sha256:4fc0b5701b69ce218a574749df561e091b3a36f53450ed66386c6eac2c8d1c7b"},
@@ -3729,7 +3729,7 @@ name = "pyobjc-framework-screensaver"
 version = "9.0.1"
 description = "Wrappers for the framework ScreenSaver on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-ScreenSaver-9.0.1.tar.gz", hash = "sha256:632a1fb94105554d53a2b329fdf47f9fd1ccfe6401d40d7be4b87312f3ec1f94"},
@@ -3747,7 +3747,7 @@ name = "pyobjc-framework-screentime"
 version = "9.0.1"
 description = "Wrappers for the framework ScreenTime on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-ScreenTime-9.0.1.tar.gz", hash = "sha256:04dc7c49a91b54fcd529fa5e453031f9b80c0fa11c3500db62c72019df487fcc"},
@@ -3763,7 +3763,7 @@ name = "pyobjc-framework-scriptingbridge"
 version = "9.0.1"
 description = "Wrappers for the framework ScriptingBridge on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-ScriptingBridge-9.0.1.tar.gz", hash = "sha256:2ae301056dfe2e6d338da2523d29a08a4b0edb0bf547efa94e283b2022a8e5d8"},
@@ -3781,7 +3781,7 @@ name = "pyobjc-framework-searchkit"
 version = "9.0.1"
 description = "Wrappers for the framework SearchKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-SearchKit-9.0.1.tar.gz", hash = "sha256:dfcd1b0281a6aabf717be3ce787fc3f28174e8251eac2c12183d708c2a98ca95"},
@@ -3797,7 +3797,7 @@ name = "pyobjc-framework-security"
 version = "9.0.1"
 description = "Wrappers for the framework Security on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-Security-9.0.1.tar.gz", hash = "sha256:d2093debe7467d85dd7ecef130d592abe6c13ffdbaf943d6624bae4a081046e0"},
@@ -3818,7 +3818,7 @@ name = "pyobjc-framework-securityfoundation"
 version = "9.0.1"
 description = "Wrappers for the framework SecurityFoundation on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-SecurityFoundation-9.0.1.tar.gz", hash = "sha256:d054c7bf831735f533c6b697c53a7d62098b8c7505050e1d261f55dd4ed97c87"},
@@ -3835,7 +3835,7 @@ name = "pyobjc-framework-securityinterface"
 version = "9.0.1"
 description = "Wrappers for the framework SecurityInterface on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-SecurityInterface-9.0.1.tar.gz", hash = "sha256:2971724b3ea089275046dc0ffd1864259cd68e5e2a37da1c02718833e4631e22"},
@@ -3854,7 +3854,7 @@ name = "pyobjc-framework-servicemanagement"
 version = "9.0.1"
 description = "Wrappers for the framework ServiceManagement on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-ServiceManagement-9.0.1.tar.gz", hash = "sha256:4499ad8e4422d7fa3d8c274ff8f4f90e6839374ef2eec8f8fdca05e2b3d56829"},
@@ -3870,7 +3870,7 @@ name = "pyobjc-framework-sharedwithyou"
 version = "9.0.1"
 description = "Wrappers for the framework SharedWithYou on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-SharedWithYou-9.0.1.tar.gz", hash = "sha256:78637b858aeb99ec0830813f945e15db259c9cee0b916df371910b28af275008"},
@@ -3888,7 +3888,7 @@ name = "pyobjc-framework-sharedwithyoucore"
 version = "9.0.1"
 description = "Wrappers for the framework SharedWithYouCore on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-SharedWithYouCore-9.0.1.tar.gz", hash = "sha256:715f4dc0295182cb6164f508163b094c0edb8b5bdb846cd3bda979535cfdbb9a"},
@@ -3906,7 +3906,7 @@ name = "pyobjc-framework-shazamkit"
 version = "9.0.1"
 description = "Wrappers for the framework ShazamKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-ShazamKit-9.0.1.tar.gz", hash = "sha256:e9b6d2554b876754613b6ebc668f4b0f1d22ac5d373fa10c3d8eea4d3bd972eb"},
@@ -3927,7 +3927,7 @@ name = "pyobjc-framework-social"
 version = "9.0.1"
 description = "Wrappers for the framework Social on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-Social-9.0.1.tar.gz", hash = "sha256:ac0552f7bcc3bfd35b4874821c9ee812b762f9c054450644cd520753c8579b6d"},
@@ -3943,7 +3943,7 @@ name = "pyobjc-framework-soundanalysis"
 version = "9.0.1"
 description = "Wrappers for the framework SoundAnalysis on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-SoundAnalysis-9.0.1.tar.gz", hash = "sha256:52ac3b7534afa19b8b9f3a3ec808f8c27d0a6b0dc2e3e87cadbc5ea03010e867"},
@@ -3959,7 +3959,7 @@ name = "pyobjc-framework-speech"
 version = "9.0.1"
 description = "Wrappers for the framework Speech on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-Speech-9.0.1.tar.gz", hash = "sha256:ec85948f88cc4a1f77c0cddca93046c0d0b4af526e3bc2aa90f77bdea916f288"},
@@ -3977,7 +3977,7 @@ name = "pyobjc-framework-spritekit"
 version = "9.0.1"
 description = "Wrappers for the framework SpriteKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-SpriteKit-9.0.1.tar.gz", hash = "sha256:7484dd95c055fdeda925ae1eec69379cc6fbb39da514c9ec71fcdeb6b0af181a"},
@@ -3999,7 +3999,7 @@ name = "pyobjc-framework-storekit"
 version = "9.0.1"
 description = "Wrappers for the framework StoreKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-StoreKit-9.0.1.tar.gz", hash = "sha256:f6dc49a17b6befb4d4d891c26080265edc1c260dbf14e66bca1ad037a72a7adc"},
@@ -4017,7 +4017,7 @@ name = "pyobjc-framework-syncservices"
 version = "9.0.1"
 description = "Wrappers for the framework SyncServices on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-SyncServices-9.0.1.tar.gz", hash = "sha256:9a038f6d857f92f9a4c34329905821726405c07f7be0e0f4a958f423e925633a"},
@@ -4036,7 +4036,7 @@ name = "pyobjc-framework-systemconfiguration"
 version = "9.0.1"
 description = "Wrappers for the framework SystemConfiguration on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-SystemConfiguration-9.0.1.tar.gz", hash = "sha256:0d328f3908b272d987aeaf56913dd4acf35bdb85a0a783cd3907c60e39b75bf3"},
@@ -4054,7 +4054,7 @@ name = "pyobjc-framework-systemextensions"
 version = "9.0.1"
 description = "Wrappers for the framework SystemExtensions on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-SystemExtensions-9.0.1.tar.gz", hash = "sha256:0b95decfa84f863d5418c6ab341285b1f4c7344566c2cb6dbc62b6380a8d39ba"},
@@ -4072,7 +4072,7 @@ name = "pyobjc-framework-threadnetwork"
 version = "9.0.1"
 description = "Wrappers for the framework ThreadNetwork on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-ThreadNetwork-9.0.1.tar.gz", hash = "sha256:426ed4d476cdb8a0c09752b8f85d586d40a6a0247e0c6f1ed40fe16689a93c54"},
@@ -4088,7 +4088,7 @@ name = "pyobjc-framework-uniformtypeidentifiers"
 version = "9.0.1"
 description = "Wrappers for the framework UniformTypeIdentifiers on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-UniformTypeIdentifiers-9.0.1.tar.gz", hash = "sha256:027e0c12923c361be01f19604049fff0ef3b4b3c920477dbe746b7e8c312355f"},
@@ -4104,7 +4104,7 @@ name = "pyobjc-framework-usernotifications"
 version = "9.0.1"
 description = "Wrappers for the framework UserNotifications on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-UserNotifications-9.0.1.tar.gz", hash = "sha256:38894aefa85bebb855559b16f798c2b8cf34cbcb7b292cd52fe143c64c6e411b"},
@@ -4122,7 +4122,7 @@ name = "pyobjc-framework-usernotificationsui"
 version = "9.0.1"
 description = "Wrappers for the framework UserNotificationsUI on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-UserNotificationsUI-9.0.1.tar.gz", hash = "sha256:7ce84ee3133fca72ea4187e820e86910a5c320422cb30e85043652917c008698"},
@@ -4139,7 +4139,7 @@ name = "pyobjc-framework-videosubscriberaccount"
 version = "9.0.1"
 description = "Wrappers for the framework VideoSubscriberAccount on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-VideoSubscriberAccount-9.0.1.tar.gz", hash = "sha256:38e0fde0cdfdab53352f880370cc5cea49b6c6f703f58dd0c14e0f1f09bedf42"},
@@ -4155,7 +4155,7 @@ name = "pyobjc-framework-videotoolbox"
 version = "9.0.1"
 description = "Wrappers for the framework VideoToolbox on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-VideoToolbox-9.0.1.tar.gz", hash = "sha256:3ff52b8a9c06bb25a6894fafbffa97607da7294cf10ad8337dc7d707d524f9f3"},
@@ -4175,7 +4175,7 @@ name = "pyobjc-framework-virtualization"
 version = "9.0.1"
 description = "Wrappers for the framework Virtualization on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-Virtualization-9.0.1.tar.gz", hash = "sha256:98ecb1e7b8021013edd2905c63d23dfd5cea58c8baaf67715060c84b120a2e95"},
@@ -4193,7 +4193,7 @@ name = "pyobjc-framework-vision"
 version = "9.0.1"
 description = "Wrappers for the framework Vision on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-Vision-9.0.1.tar.gz", hash = "sha256:0f5a6f56fd4a2d9ea340aeafe06479b500aebfcc2b81aa2a496d438a00598222"},
@@ -4213,7 +4213,7 @@ name = "pyobjc-framework-webkit"
 version = "9.0.1"
 description = "Wrappers for the framework WebKit on macOS"
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "pyobjc-framework-WebKit-9.0.1.tar.gz", hash = "sha256:82ed0cb273012b48f7489072d6e00579f42d54bc4543471c262db3e5c4bb9e87"},
@@ -4231,7 +4231,7 @@ name = "pyperclip"
 version = "1.8.2"
 description = "A cross-platform clipboard module for Python. (Only handles plain text for now.)"
 category = "dev"
-optional = true
+optional = false
 python-versions = "*"
 files = [
     {file = "pyperclip-1.8.2.tar.gz", hash = "sha256:105254a8b04934f0bc84e9c24eb360a591aaf6535c9def5f29d92af107a9bf57"},
@@ -4242,7 +4242,7 @@ name = "pyrect"
 version = "0.2.0"
 description = "PyRect is a simple module with a Rect class for Pygame-like rectangular areas."
 category = "dev"
-optional = true
+optional = false
 python-versions = "*"
 files = [
     {file = "PyRect-0.2.0.tar.gz", hash = "sha256:f65155f6df9b929b67caffbd57c0947c5ae5449d3b580d178074bffb47a09b78"},
@@ -4290,7 +4290,7 @@ name = "pyscreeze"
 version = "0.1.28"
 description = "A simple, cross-platform screenshot module for Python 2 and 3."
 category = "dev"
-optional = true
+optional = false
 python-versions = "*"
 files = [
     {file = "PyScreeze-0.1.28.tar.gz", hash = "sha256:4428600ed19b30cd3f4b5d83767d198fc1dbae7439eecf9bd795445c009b67ae"},
@@ -4328,7 +4328,7 @@ name = "python3-xlib"
 version = "0.15"
 description = "Python3 X Library"
 category = "dev"
-optional = true
+optional = false
 python-versions = "*"
 files = [
     {file = "python3-xlib-0.15.tar.gz", hash = "sha256:dc4245f3ae4aa5949c1d112ee4723901ade37a96721ba9645f2bfa56e5b383f8"},
@@ -4339,7 +4339,7 @@ name = "pytweening"
 version = "1.0.4"
 description = "A collection of tweening / easing functions."
 category = "dev"
-optional = true
+optional = false
 python-versions = "*"
 files = [
     {file = "pytweening-1.0.4.tar.gz", hash = "sha256:8533282cf70b31de8a0499e1cf420930b0013c787118872b2ec899382792e2e6"},
@@ -4601,7 +4601,7 @@ name = "rubicon-objc"
 version = "0.4.5"
 description = "A bridge between an Objective C runtime environment and Python."
 category = "dev"
-optional = true
+optional = false
 python-versions = ">=3.7"
 files = [
     {file = "rubicon-objc-0.4.5.tar.gz", hash = "sha256:f848b6033687f811a11a9d133d6bc4799627b953edbf0e975af598231bd1b272"},
@@ -4940,10 +4940,10 @@ docs = ["furo", "jaraco.packaging (>=9)", "jaraco.tidelift (>=1.4)", "rst.linker
 testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools", "more-itertools", "pytest (>=6)", "pytest-black (>=0.3.7)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=1.3)", "pytest-flake8", "pytest-mypy (>=0.9.1)"]
 
 [extras]
-pyautogui = []
+pygobject = []
 win32gui = []
 
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "7ba3d2be03ecc7f00cbae48a49c09ce2ac6a6040d98583d286e2c83d5f36d128"
+content-hash = "322005c0b3053c36139a2f4e9d2b9af268c5365c4b1fce5afe029f1b6dea4f47"
