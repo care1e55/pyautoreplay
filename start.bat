@@ -1,0 +1,1 @@
+python .\pyautoreplay\main.py "C:\\autorep_pack\\starcraft\\replays\\ALL" "C:\\autorep_pack\\starcraft\\maps\\replays"
