@@ -23,4 +23,7 @@ class ReplayStorage:
         for replay_path in replays:
             if not replay_path.is_file():
                 continue
-            yield Replay(replay_path)
+            try:
+                yield Replay(replay_path)
+            except:
+                continue
