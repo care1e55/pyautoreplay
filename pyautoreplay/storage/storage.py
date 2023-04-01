@@ -1,9 +1,6 @@
-from enum import Enum
 from pathlib import Path
 from random import shuffle
 from typing import Iterable
-
-from loguru import logger
 
 from pyautoreplay.replay.screp.screp import Replay
 
@@ -23,4 +20,7 @@ class ReplayStorage:
         for replay_path in replays:
             if not replay_path.is_file():
                 continue
-            yield Replay(replay_path)
+            try:
+                yield Replay(replay_path)
+            except:
+                continue
