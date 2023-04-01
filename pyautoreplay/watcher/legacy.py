@@ -6,7 +6,6 @@ from typing import Optional
 
 import pyautogui
 from tqdm import tqdm
-from loguru import logger
 
 from pyautoreplay.replay.screp.screp import Replay
 from pyautoreplay.storage.storage import ReplayStorage
@@ -39,11 +38,8 @@ class ReplayWatcher:
     WATCHING = r'Autoreplay'
     WINDOW = r'Brood War'
 
-    def __init__(self, storage: ReplayStorage, watching_path, system: System = System.UBUNTU):
-        print(storage.replays_storage_path)
-        print(self.WATCHING)
-        # self.watching_path = Path(f'{storage.replays_storage_path}\\{self.WATCHING}')
-        self.watching_path = watching_path
+    def __init__(self, storage: ReplayStorage, watching_path: str, system: System = System.UBUNTU):
+        self.watching_path = Path(watching_path)
         self.current_replay = None
         if system == System.WINDOWS:
             from pyautoreplay.window_manager.windows import WindowsWindowManager
@@ -61,7 +57,7 @@ class ReplayWatcher:
         self.exit_replay()
 
     def do_action(self, key: str, delay: float = 0.2):
-        window = self.window_manager.find_window(self.WINDOW)
+        self.window_manager.find_window(self.WINDOW)
         time.sleep(delay)
         self._press_key(key)
 

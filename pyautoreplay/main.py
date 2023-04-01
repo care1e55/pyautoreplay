@@ -6,8 +6,8 @@ from pyautoreplay.storage.storage import ReplayStorage
 from pyautoreplay.watcher.legacy import ReplayWatcher, System, ReplayError, Action
 
 if __name__ == '__main__':
-    storage_path = Path(sys.argv[1])
-    watching_path = Path(sys.argv[2])
+    storage_path = sys.argv[1]
+    watching_path = sys.argv[2]
     logger.info('Starting replays from {}', storage_path)
     rs = ReplayStorage(storage_path)
     rw = ReplayWatcher(rs, watching_path, system=System.WINDOWS)
