@@ -1,9 +1,6 @@
-from enum import Enum
 from pathlib import Path
 from random import shuffle
 from typing import Iterable
-
-from loguru import logger
 
 from pyautoreplay.replay.screp.screp import Replay
 
