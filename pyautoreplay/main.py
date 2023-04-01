@@ -14,17 +14,9 @@ if __name__ == '__main__':
     rw = ReplayWatcher(rs, watching_path, system=System.WINDOWS)
 
     for i, replay in enumerate(rs.replays()):
-        if i == 0:
-            rw._clean_watching_dir()
-            rw._move_to_watcing_dir(replay)
-            rw.init_games_screen()
-            rw.init_replay()
-            rw.watch(replay)
-            rw.exit_replay()
-            continue
-        if replay:
-            rw._move_to_watcing_dir(replay)
-            rw.init_replay()
-            rw._clean_watching_dir()
-            rw.watch(replay)
-            rw.exit_replay()
+        rw._clean_watching_dir()
+        rw._move_to_watcing_dir(replay)
+        rw.init_games_screen()
+        rw.init_replay()
+        rw.watch(replay)
+        rw.exit_replay()

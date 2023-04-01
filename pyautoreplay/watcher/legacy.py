@@ -19,6 +19,7 @@ class Action(str, Enum):
     SPEEDUP = 'u'
     SWITCH_PLAYER = 'f5'
     EXIT = 'x'
+    CANCEL = 'c'
 
 
 class System(str, Enum):
@@ -83,6 +84,8 @@ class ReplayWatcher:
         self._do_action(Action.EXIT)
         time.sleep(3)
         self._do_action(Action.OK)
+        self._do_action(Action.CANCEL)
+        self._do_action(Action.CANCEL)
 
     def _move_to_watcing_dir(self, replay: Replay):
         replay.copy(self.watching_path / replay.path.name)
