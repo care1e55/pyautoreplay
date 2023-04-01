@@ -40,14 +40,44 @@ class ScrepCommand(Command):
         return f'screp {_path_str}'
 
 
-class StacraftCommand(Command):
-    def __init__(self, path: str):
-        self.path = path
+class IccupCommand(Command):
+    def __init__(self):
+        pass
 
     @property
     def execution_string(self):
-        _path_str = f"\"{str(self.path)}\""
-        return f'screp {_path_str}'
+        return ''
+
+
+class FfmpegCommand(Command):
+    def __init__(self, twitch_token):
+        self.twitch_token = twitch_token
+
+    @property
+    def execution_string(self):
+        return f"""
+            ffmpeg  -f gdigrab 
+                    -s 640x480 
+                    -framerate 25 
+                    -i title="Brood War" 
+                    -f dshow 
+                    -i audio="CABLE Output (VB-Audio Virtual Cable)" 
+                    -c:v libx264 
+                    -preset fast 
+                    -pix_fmt yuv420p 
+                    -s 640x480 
+                    -threads 0 
+                    -f flv {self.twitch_token}
+            """
+
+
+class CamrepCommand(Command):
+    def __init__(self):
+        pass
+
+    @property
+    def execution_string(self):
+        return ''
 
 
 class CommandExecutor:
