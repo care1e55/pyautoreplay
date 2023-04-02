@@ -4,7 +4,6 @@ from functools import cached_property
 from pathlib import Path
 from typing import Optional
 
-import pyautogui
 from tqdm import tqdm
 
 from pyautoreplay.replay.screp.screp import Replay
@@ -51,29 +50,45 @@ class ReplayWatcher:
         self.exit_replay()
 
     def init_games_screen(self):
-        self.action.do_action(Actions.SINGLE_PLAYER)
-        self.action.do_action(Actions.EXPANSION)
-        self.action.do_action(Actions.OK)
+        self.action.do_action(Actions.SINGLE_PLAYER)\
+            .do_action(Actions.EXPANSION)\
+            .do_action(Actions.OK)
         return self
 
     def start_replay(self):
         time.sleep(3)
-        self.action.do_action(Actions.REPLAY)
-        self.action.do_action(Actions.DOWN)
-        self.action.do_action(Actions.OK)
+        self.action.do_action(Actions.REPLAY)\
+            .do_action(Actions.DOWN)\
+            .do_action(Actions.OK)
         return self
 
     def configure_replay(self):
-        self.action.do_action(Actions.SPEEDUP)
-        self.action.do_action(Actions.SPEEDUP)
-        self.action.do_action(Actions.SWITCH_PLAYER)
-        self.action.do_action(Actions.SWITCH_PLAYER)
+        self.action.do_action(Actions.SPEEDUP)\
+            .do_action(Actions.SPEEDUP)\
+            .do_action(Actions.SWITCH_PLAYER)\
+            .do_action(Actions.SWITCH_PLAYER)
         return self
 
     def exit_replay(self):
         self.action.do_action(Actions.EXIT)
         time.sleep(3)
-        self.action.do_action(Actions.OK)
+        self.action.do_action(Actions.OK)\
+            .do_action(Actions.CANCEL)\
+            .do_action(Actions.CANCEL)
+
+        return self
+
+    def start_starcraft(self):
+        for _ in range(15):
+            self.action.do_action(Actions.TAB)
+        self.action.do_action(Actions.SPACE)
+        return self
+
+    def exit_replays_screen(self):
+        self.action.do_action(Actions.OK) \
+            .do_action(Actions.CANCEL) \
+            .do_action(Actions.CANCEL) \
+            .do_action(Actions.CANCEL)
         return self
 
     @cached_property

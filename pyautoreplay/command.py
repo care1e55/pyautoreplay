@@ -55,8 +55,7 @@ class IccupCommand(Command):
 
     @property
     def execution_string(self):
-        run_iccup_str = f'{self.location}'
-        return run_iccup_str
+        return f'{self.location}'
 
 
 class FfmpegCommand(Command):

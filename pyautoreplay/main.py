@@ -23,21 +23,13 @@ if __name__ == '__main__':
             rw.configure_replay()\
                 .watch(replay)\
                 .exit_replay()
-            rw.action.do_action(Actions.CANCEL)\
-                .do_action(Actions.CANCEL)
+        elif rw.error == ReplayError.EXPANSION_SCENARIO:
+            rw.exit_replays_screen()
             continue
-        if rw.error == ReplayError.EXPANSION_SCENARIO:
-            rw.action.do_action(Actions.OK)\
-                .do_action(Actions.CANCEL)\
-                .do_action(Actions.CANCEL)\
-                .do_action(Actions.CANCEL)
         elif rw.error == ReplayError.FATAL:
             # TODO: close error window
             start_iccup_command.execute()
-            rw.action.do_action(Actions.TAB) \
-                .do_action(Actions.TAB) \
-                .do_action(Actions.TAB) \
-                .do_action(Actions.SPACE)
+            rw.start_starcraft()
             continue
         else:
             raise 'Unknown error'
