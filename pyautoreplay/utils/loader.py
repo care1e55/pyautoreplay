@@ -71,7 +71,7 @@ class FfmpegCommand(Command):
             """
 
 
-class CamrepCommand(Command):
+class CanrepCommand(Command):
     def __init__(self):
         pass
 

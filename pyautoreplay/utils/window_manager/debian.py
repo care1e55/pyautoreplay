@@ -1,9 +1,8 @@
 import subprocess
 import time
-from abc import abstractmethod
 from typing import List
 
-from pyautoreplay.window_manager import WindowManager, Window, WmctrlWindow
+from pyautoreplay.utils.window_manager import WindowManager, Window, WmctrlWindow
 
 import gi
 
