@@ -1,6 +1,6 @@
 import enum
 import subprocess
-from abc import abstractmethod
+from abc import abstractmethod, ABC
 
 
 class Commands(enum.Enum):
@@ -23,11 +23,20 @@ commands_executions = {
 }
 
 
-class Command:
+class Command(ABC):
     @property
     @abstractmethod
     def execution_string(self) -> str:
         pass
+
+    def execute(self):
+        p = subprocess.Popen(
+            self.execution_string,
+            shell=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT
+        )
+        return ''.join([line.decode("utf-8") for line in p.stdout.readlines()])
 
 
 class ScrepCommand(Command):
@@ -41,12 +50,13 @@ class ScrepCommand(Command):
 
 
 class IccupCommand(Command):
-    def __init__(self):
-        pass
+    def __init__(self, location: str):
+        self.location = location
 
     @property
     def execution_string(self):
-        return ''
+        run_iccup_str = f'{self.location}'
+        return run_iccup_str
 
 
 class FfmpegCommand(Command):
@@ -72,21 +82,9 @@ class FfmpegCommand(Command):
 
 
 class CanrepCommand(Command):
-    def __init__(self):
-        pass
+    def __init__(self, location: str):
+        self.location = location
 
     @property
     def execution_string(self):
-        return ''
-
-
-class CommandExecutor:
-    @staticmethod
-    def execute(command: Command):
-        p = subprocess.Popen(
-            command.execution_string,
-            shell=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT
-        )
-        return ''.join([line.decode("utf-8") for line in p.stdout.readlines()])
+        return f'{self.location}'

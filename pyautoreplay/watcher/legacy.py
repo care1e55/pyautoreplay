@@ -8,7 +8,6 @@ import pyautogui
 from tqdm import tqdm
 
 from pyautoreplay.replay.screp.screp import Replay
-from pyautoreplay.storage.storage import ReplayStorage
 from pyautoreplay.utils.action import Action
 
 
@@ -27,6 +26,8 @@ class Actions(str, Enum):
     SWITCH_PLAYER = 'f5'
     EXIT = 'x'
     CANCEL = 'c'
+    TAB = 'tab'
+    SPACE = 'space'
 
 
 class System(str, Enum):
