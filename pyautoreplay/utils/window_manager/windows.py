@@ -1,9 +1,8 @@
 import re
-from time import sleep
 
 import win32gui
 
-from pyautoreplay.window_manager import WindowManager
+from pyautoreplay.utils.window_manager import WindowManager
 
 
 class WindowsWindowManager(WindowManager):

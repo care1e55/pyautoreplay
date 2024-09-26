@@ -1,32 +1,35 @@
 import sys
-from pathlib import Path
 from loguru import logger
 
+from pyautoreplay.utils.action import Action
+from pyautoreplay.loader import IccupCommand
 from pyautoreplay.storage.storage import ReplayStorage
-from pyautoreplay.watcher.legacy import ReplayWatcher, System
+from pyautoreplay.watcher.legacy import ReplayWatcher, System, ReplayError, Actions
+
+WINDOW = r'Brood War'
 
 if __name__ == '__main__':
-    storage_path = Path(sys.argv[1])
-    # base_game_path = Path(sys.argv[2])
-    watching_path = Path(sys.argv[2])
+    storage_path = sys.argv[1]
+    watching_path = sys.argv[2]
     logger.info('Starting replays from {}', storage_path)
-    replays_storage_path = Path(storage_path)
-    rs = ReplayStorage(replays_storage_path)
-    rw = ReplayWatcher(rs, watching_path, system=System.WINDOWS)
-    # rw.watching_path = watching_path
+    a = Action(window=WINDOW, system=System.WINDOWS)
+    rs = ReplayStorage(storage_path)
+    rw = ReplayWatcher(watching_path, action_handler=a)
+    start_iccup_command = IccupCommand(location='C:\\')
 
     for i, replay in enumerate(rs.replays()):
-        if i == 0:
-            rw._clean_watching_dir()
-            rw._move_to_watcing_dir(replay)
-            rw.init_games_screen()
-            rw.init_replay()
-            rw.watch(replay)
-            rw.exit_replay()
+        rw.clean_watching_dir().move_to_watcing_dir(replay).init_games_screen().start_replay()
+        if not rw.error:
+            rw.configure_replay()\
+                .watch(replay)\
+                .exit_replay()
+        elif rw.error == ReplayError.EXPANSION_SCENARIO:
+            rw.exit_replays_screen()
             continue
-        if replay:
-            rw._move_to_watcing_dir(replay)
-            rw.init_replay()
-            rw._clean_watching_dir()
-            rw.watch(replay)
-            rw.exit_replay()
+        elif rw.error == ReplayError.FATAL:
+            # TODO: close error window
+            start_iccup_command.execute()
+            rw.start_starcraft()
+            continue
+        else:
+            raise 'Unknown error'
