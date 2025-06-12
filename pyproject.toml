@@ -3,21 +3,23 @@ name = "pyautoreplay"
 version = "0.1.0"
 description = ""
 authors = ["Your Name <you@example.com>"]
+readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.9"
-
-[tool.poetry.dev-dependencies]
-win32gui = { version = "*", optional = true }
+python = "^3.12"
 loguru = "*"
 jupyter = "*"
 pyautogui = "*"
 tqdm = "*"
-PyGObject = { version = "*", optional = true }
-pycairo = "*"
+# pycairo = "*"
 pydantic = "*"
-
+win32gui = { version = "*", optional = true }
+PyGObject = { version = "*", optional = true }
 
 [tool.poetry.extras]
 win32gui = ["win32gui"]
 PyGObject = ["PyGObject"]
+
+[build-system]
+requires = ["poetry-core>=1.7.0"]
+build-backend = "poetry.core.masonry.api"
